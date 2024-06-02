@@ -1,5 +1,5 @@
 {
-  "name": "starter-template",
+  "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,18 +12,30 @@
     "test:ui": "vitest -u --ui"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.4.2",
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.6",
+    "bad-words-es": "^1.0.0",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-device-sizes": "^1.0.5",
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.4",
+    "react-icons": "^5.2.1",
+    "react-spinners": "^0.13.8",
+    "three": "^0.164.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.5",
     "@testing-library/user-event": "^14.5.2",
+    "@types/bad-words-es": "npm:@types/bad-words@^3.0.3",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.163.0",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "@vitejs/plugin-react": "^4.2.1",
@@ -46,6 +58,7 @@
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.1",
     "tailwindcss-touch": "^1.0.1",
+    "three-stdlib": "^2.30.0",
     "typescript": "^5",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.5.2"
