@@ -3,12 +3,15 @@
 import { Environment, Html, OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
+import { useMediaQuery } from 'react-device-sizes'
 import { PacmanLoader } from 'react-spinners'
-import * as Models from '@/models'
+import { CyberpunkCity, CyberpunkGhettoDeLorean } from '@/models'
 
 export default function Home() {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+
   return (
-    <Canvas className='absolute left-0 top-0 !h-screen cursor-grab bg-black active:cursor-grabbing'>
+    <Canvas className='absolute z-0 !h-screen cursor-grab bg-black active:cursor-grabbing'>
       <Suspense
         fallback={
           <Html center>
@@ -16,12 +19,12 @@ export default function Home() {
           </Html>
         }
       >
-        {/* <Models.CuteHomeRobot /> */}
-        {/* <Models.CyberpunkCar rotation={[0, Math.PI / 2, 0.2]} scale={0.005} /> */}
-        <Models.CyberpunkCity position={[-2, -2, 2]} rotation={[0, Math.PI / 2, 0]} scale={1.2} />
-        <Models.CyberpunkGhettoDeLorean rotation={[0, Math.PI / 2, 0.2]} scale={0.2} />
-        {/* <Models.LotusEspritHover rotation={[0, Math.PI / 2, 0.2]} scale={0.00005} /> */}
-        {/* <Models.SpaceFighter rotation={[0, Math.PI / 2, 0.2]} scale={0.005} /> */}
+        <CyberpunkCity
+          position={[-2, isMobile ? -2.5 : -2, 2]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={isMobile ? 1 : 1.2}
+        />
+        <CyberpunkGhettoDeLorean rotation={[0, Math.PI / 2, 0.2]} scale={isMobile ? 0.15 : 0.2} />
       </Suspense>
       <directionalLight intensity={10} position={[0, 1, 0]} />
       <Environment preset='night' />

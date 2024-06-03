@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
 import localFont from 'next/font/local'
+import { DesktopNav, MobileNav } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,6 +30,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <body className={clsx('relative h-screen', montserrat.variable)}>
+        <DesktopNav />
+        <MobileNav />
         <main>{children}</main>
       </body>
     </html>
