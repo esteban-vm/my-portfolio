@@ -1,5 +1,3 @@
-import tailwindCSSTouch from 'tailwindcss-touch'
-
 /** @type {import("tailwindcss").Config} */
 const tailwindConfig = {
   content: [
@@ -12,12 +10,17 @@ const tailwindConfig = {
       fontFamily: {
         montserrat: 'var(--font-montserrat)',
       },
+      animatedSettings: {
+        animatedSpeed: 500,
+        classes: ['backInDown', 'backOutUp'],
+      },
     },
   },
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [tailwindCSSTouch()],
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  plugins: [require('tailwindcss-touch')(), require('tailwindcss-animatecss')],
 }
 
 export default tailwindConfig
