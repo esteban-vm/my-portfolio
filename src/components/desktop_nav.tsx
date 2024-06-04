@@ -10,7 +10,7 @@ export default function DesktopNav() {
       <div className='flex select-none gap-8 text-lg font-medium uppercase'>
         {navLinks.map(({ title, route }) => (
           <Link
-            key={crypto.randomUUID()}
+            key={title}
             className='z-10 decoration-gray-700 decoration-wavy underline-offset-4 transition-all hover:underline hover:opacity-80'
             href={route}
           >

@@ -22,12 +22,12 @@ export default function MobileNav() {
         <div
           className={clsx(
             'absolute right-0 top-full z-10 flex select-none flex-col gap-1',
-            'text-nowrap text-center text-lg font-medium animate__animated',
-            active ? 'animate__backInDown' : 'animate__backOutUp'
+            'text-nowrap text-center text-lg font-medium animate__animated motion-reduce:animate-none',
+            active ? 'animate__backInDown' : 'animate__backOutUp motion-reduce:hidden'
           )}
         >
           {navLinks.map(({ title, route }) => (
-            <Link key={crypto.randomUUID()} className='px-8 py-3' href={route} onClick={toggleMenu}>
+            <Link key={title} className='px-8 py-3' href={route} onClick={toggleMenu}>
               {title}
             </Link>
           ))}
