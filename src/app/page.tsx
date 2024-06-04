@@ -9,6 +9,7 @@ import { CyberpunkCity, CyberpunkGhettoDeLorean } from '@/models'
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 })
+  const isAnimated = useMediaQuery({ query: '(prefers-reduced-motion: no-preference)' })
 
   return (
     <Canvas className='absolute z-0 !h-screen cursor-grab bg-black active:cursor-grabbing'>
@@ -30,12 +31,12 @@ export default function Home() {
       <Environment preset='night' />
       <PerspectiveCamera position={[0, 0, 10]} makeDefault />
       <OrbitControls
+        autoRotate={isAnimated}
         autoRotateSpeed={-0.5}
         enablePan={false}
         enableZoom={false}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
-        autoRotate
         enableDamping
       />
       <Stats />
