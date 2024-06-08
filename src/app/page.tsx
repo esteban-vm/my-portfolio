@@ -4,7 +4,7 @@ import { Environment, Html, OrbitControls, PerspectiveCamera, Stats } from '@rea
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import { useMediaQuery } from 'react-device-sizes'
-import { PacmanLoader } from 'react-spinners'
+import { Loading } from '@/components'
 import { CyberpunkCity, CyberpunkGhettoDeLorean } from '@/models'
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <Suspense
         fallback={
           <Html center>
-            <PacmanLoader color='lime' />
+            <Loading />
           </Html>
         }
       >
