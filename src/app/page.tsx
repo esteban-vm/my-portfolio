@@ -12,7 +12,7 @@ export default function Home() {
   const isAnimated = useMediaQuery({ query: '(prefers-reduced-motion: no-preference)' })
 
   return (
-    <Canvas className='absolute z-0 !h-screen cursor-grab bg-black active:cursor-grabbing'>
+    <Canvas className='absolute !h-screen cursor-grab active:cursor-grabbing'>
       <Suspense
         fallback={
           <Html center>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
 import localFont from 'next/font/local'
-import { DesktopNav, MobileNav } from '@/components'
+import { Navigation } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -26,12 +26,18 @@ const montserrat = localFont({
   ],
 })
 
+const saiba45 = localFont({
+  variable: '--font-saiba45',
+  display: 'swap',
+  fallback: ['cursive'],
+  src: '../../public/fonts/SAIBA-45.woff2',
+})
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
-      <body className={clsx('relative h-screen', montserrat.variable)}>
-        <DesktopNav />
-        <MobileNav />
+      <body className={clsx('relative bg-black', montserrat.variable, saiba45.variable)}>
+        <Navigation />
         <main>{children}</main>
       </body>
     </html>
