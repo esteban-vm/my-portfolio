@@ -1,7 +1,7 @@
 import type { NavLink } from '@/types'
 
 export const navLinks: NavLink[] = [
-  { title: 'About Me', route: '/' },
-  { title: 'My Projects', route: '/' },
-  { title: 'Contact Me', route: '/' },
+  { title: 'About Me', route: '/about' },
+  { title: 'My Projects', route: '/projects' },
+  { title: 'Contact Me', route: '/contact' },
 ]
