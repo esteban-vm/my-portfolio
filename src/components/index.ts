@@ -1,2 +1,2 @@
 export { default as Loading } from './loading'
-export { default as Navigation } from './navigation'
+export { default as NavBar } from './nav_bar'
