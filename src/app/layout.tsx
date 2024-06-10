@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
 import localFont from 'next/font/local'
-import { NavBar } from '@/components'
+import { AppHeader } from '@/components'
 
 export const metadata: Metadata = {
   title: 'My Portfolio | Home',
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <body className={clsx('relative bg-black', montserrat.variable, saiba45.variable)}>
-        <NavBar />
+        <AppHeader />
         <main>{children}</main>
       </body>
     </html>
