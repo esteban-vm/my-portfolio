@@ -1,6 +1,6 @@
 'use client'
 
-import { Environment, Html, OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei'
+import { Environment, Html, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import { useMediaQuery } from 'react-device-sizes'
@@ -39,7 +39,6 @@ export default function Home() {
         minPolarAngle={Math.PI / 2}
         enableDamping
       />
-      <Stats />
     </Canvas>
   )
 }

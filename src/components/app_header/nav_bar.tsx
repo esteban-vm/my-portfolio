@@ -22,19 +22,22 @@ export default function NavBar({ children }: { children: ReactNode }) {
   }, [isMediumDevice])
 
   return (
-    <>
-      <button className='pointer-events-auto lg:hidden [&>svg]:size-10' onClick={toggleMenu}>
+    <div className='relative border border-white'>
+      <button
+        className='pointer-events-auto flex items-center justify-center text-cyber lg:hidden [&>svg]:size-10'
+        onClick={toggleMenu}
+      >
         {active ? <LuX /> : <LuMenu />}
       </button>
       <nav
         ref={linksRef}
         className={clsx(
-          'absolute right-0 top-[120%] flex flex-col gap-1 text-nowrap text-center animate__animated lg:relative lg:animate-none lg:flex-row lg:gap-8',
+          'absolute right-0 top-full z-10 flex flex-col gap-2 text-nowrap border border-white px-5 py-2 text-center animate__animated lg:static lg:animate-none lg:flex-row lg:gap-8 lg:p-0',
           active ? 'animate__backInDown' : 'animate__backOutUp'
         )}
       >
         {children}
       </nav>
-    </>
+    </div>
   )
 }
