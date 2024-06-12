@@ -86,6 +86,12 @@ const tailwindConfig = {
         '.logo-shadow': {
           'text-shadow': '4px 2px 0px oklch(var(--brand2)), 8px 4px 30px oklch(var(--brand))',
         },
+        '.nav-h': {
+          height: 'calc(100vh - 3rem - 3.5rem * 2)',
+        },
+        '.nav-h-md': {
+          height: 'calc(100vh - 3.75rem - 3.5rem * 2)',
+        },
       })
     }),
   ],
