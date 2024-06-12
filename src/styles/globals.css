@@ -13,6 +13,10 @@
   }
 
   * {
-    @apply font-montserrat motion-reduce:!animate-none;
+    @apply font-montserrat selection:bg-brand selection:text-black motion-reduce:!animate-none;
+  }
+
+  canvas {
+    @apply cursor-grab active:cursor-grabbing;
   }
 }

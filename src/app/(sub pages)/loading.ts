@@ -1,1 +1,1 @@
-export { Loading as default } from '@/components'
+export { Loader as default } from '@/shared'

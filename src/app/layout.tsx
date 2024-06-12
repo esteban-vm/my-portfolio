@@ -6,7 +6,6 @@ import localFont from 'next/font/local'
 import { AppHeader } from '@/components'
 
 export const metadata: Metadata = {
-  title: 'My Portfolio | Home',
   description: "Esteban V.M.'s portfolio website",
   authors: { name: 'Esteban V.M.', url: 'https://github.com/esteban-vm' },
 }
@@ -37,9 +36,11 @@ const saiba45 = localFont({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
-      <body className={clsx('relative bg-black', montserrat.variable, saiba45.variable)}>
-        <AppHeader />
-        <main>{children}</main>
+      <body>
+        <main className={clsx('relative h-screen bg-black', montserrat.variable, saiba45.variable)}>
+          <AppHeader />
+          {children}
+        </main>
       </body>
     </html>
   )
