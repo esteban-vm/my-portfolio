@@ -12,9 +12,10 @@ export default function NavLink({ title, route }: INavLink) {
     <Link
       href={route}
       className={clsx(
-        'px-8 py-3 font-montserrat font-bold uppercase decoration-wavy underline-offset-4 transition-all hover:underline hover:opacity-80 active:scale-95 lg:p-0',
-        pathname === route && 'text-brand'
+        'relative inline-block font-bold uppercase text-cyber after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-cyber after:transition-transform after:duration-200 after:ease-out after:content-[""] hover:opacity-90 hover:after:origin-bottom-left hover:after:scale-x-100 active:scale-95 lg:p-0 lg:after:absolute',
+        pathname === route && '!text-brand2 after:!bg-brand2'
       )}
+      data-navigation
     >
       {title}
     </Link>
