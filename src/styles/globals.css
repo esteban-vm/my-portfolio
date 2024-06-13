@@ -4,15 +4,10 @@
 
 @layer base {
   :root {
-    /* #a4d3be */
     --neon-green-lighter: 82.77% 0.057 165.9;
-    /* #0cffed */
     --neon-green-light: 90% 0.157 185.73;
-    /* #00e0c0 */
     --neon-green-dark: 81.08% 0.14993954443651095 177.3694855517465;
-    /* #17c47c */
     --neon-green-darker: 72.41% 0.166 157.77;
-    /* #d3fc17 */
     --neon-yellow: 92.9% 0.22 120.98;
   }
 
