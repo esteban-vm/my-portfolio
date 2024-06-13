@@ -5,15 +5,17 @@
 @layer base {
   :root {
     /* #0cffed */
-    --brand: 0.9 0.16 185.73;
+    --neon-green-light: 90% 0.157 185.73;
     /* #00e0c0 */
-    --brand2: 0.81 0.15 177.64;
+    --neon-green: 81.08% 0.14993954443651095 177.3694855517465;
+    /* #17c47c */
+    --neon-green-dark: 72.41% 0.166 157.77;
     /* #d3fc17 */
-    --cyber: 0.93 0.22 121.03;
+    --neon-yellow: 92.9% 0.22 120.98;
   }
 
   * {
-    @apply font-montserrat selection:bg-brand selection:text-black motion-reduce:!animate-none;
+    @apply font-montserrat selection:bg-neon-green-light selection:text-black motion-reduce:!animate-none;
   }
 
   canvas {

@@ -23,7 +23,7 @@ export default function NavBar({ children }: { children: ReactNode }) {
   return (
     <>
       <button
-        className='pointer-events-auto flex items-center justify-center text-cyber lg:hidden [&>svg]:size-8 active:[&>svg]:scale-90 md:[&>svg]:size-10'
+        className='pointer-events-auto flex items-center justify-center text-neon-yellow lg:hidden [&>svg]:size-8 active:[&>svg]:scale-90 md:[&>svg]:size-10'
         onClick={toggleMenu}
       >
         {active ? <LuX /> : <LuMenu />}
