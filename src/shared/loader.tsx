@@ -1,5 +1,5 @@
 import { PacmanLoader } from 'react-spinners'
 
-export default function Loading() {
+export default function Loader() {
   return <PacmanLoader color='lime' />
 }
