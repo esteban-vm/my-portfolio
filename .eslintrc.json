@@ -31,7 +31,6 @@
     "@typescript-eslint/consistent-type-definitions": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/ban-ts-comment": "off",
-    "tailwindcss/no-custom-classname": "off",
     "tailwindcss/classnames-order": "off",
     "import/no-named-as-default": "off",
     "import/order": [

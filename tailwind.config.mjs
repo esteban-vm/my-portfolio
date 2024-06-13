@@ -57,9 +57,10 @@ const tailwindConfig = {
         glitch: 'glitch 10s step-end infinite',
       },
       colors: {
+        'neon-green-lighter': 'oklch(var(--neon-green-lighter))',
         'neon-green-light': 'oklch(var(--neon-green-light))',
-        'neon-green': 'oklch(var(--neon-green))',
         'neon-green-dark': 'oklch(var(--neon-green-dark))',
+        'neon-green-darker': 'oklch(var(--neon-green-darker))',
         'neon-yellow': 'oklch(var(--neon-yellow))',
       },
     },
@@ -85,7 +86,7 @@ const tailwindConfig = {
           'animation-play-state': 'paused',
         },
         '.logo-shadow': {
-          'text-shadow': '4px 2px 0px oklch(var(--neon-green)), 8px 4px 30px oklch(var(--neon-green-light))',
+          'text-shadow': '4px 2px 0px oklch(var(--neon-green-dark)), 8px 4px 30px oklch(var(--neon-green-light))',
         },
         '.nav-h': {
           height: 'calc(100vh - 3rem - 3.5rem * 2)',
