@@ -1,5 +1,18 @@
 import plugin from 'tailwindcss/plugin'
 
+const neonColors = /** @type {const} */ ({
+  /** #a4d3be */
+  greenLighter: 'oklch(var(--neon-green-lighter))',
+  /** #0cffed */
+  greenLight: 'oklch(var(--neon-green-light))',
+  /** #00e0c0 */
+  greenDark: 'oklch(var(--neon-green-dark))',
+  /** #17c47c */
+  greenDarker: 'oklch(var(--neon-green-darker))',
+  /** #d3fc17 */
+  yellow: 'oklch(var(--neon-yellow))',
+})
+
 /** @type {import("tailwindcss").Config} */
 const tailwindConfig = {
   content: [
@@ -52,15 +65,37 @@ const tailwindConfig = {
             'clip-path': 'none',
           },
         },
+        blink: {
+          '0%, 100%': {
+            'background-color': neonColors.greenDarker,
+            'box-shadow': `
+              0 0 5px ${neonColors.greenDarker},
+              0 0 25px ${neonColors.greenDarker},
+              0 0 50px ${neonColors.greenDarker},
+              0 0 200px ${neonColors.greenDarker}
+            `,
+          },
+          '50%': {
+            'background-color': neonColors.greenLighter,
+            'box-shadow': `
+              0 0 5px ${neonColors.greenLighter},
+              0 0 25px ${neonColors.greenLighter},
+              0 0 50px ${neonColors.greenLighter},
+              0 0 200px ${neonColors.greenLighter}
+            `,
+          },
+        },
       },
       animation: {
         glitch: 'glitch 10s step-end infinite',
+        blink: 'blink 2s infinite linear',
       },
       colors: {
-        'neon-green-light': 'oklch(var(--neon-green-light))',
-        'neon-green': 'oklch(var(--neon-green))',
-        'neon-green-dark': 'oklch(var(--neon-green-dark))',
-        'neon-yellow': 'oklch(var(--neon-yellow))',
+        'neon-green-lighter': neonColors.greenLighter,
+        'neon-green-light': neonColors.greenLight,
+        'neon-green-dark': neonColors.greenDark,
+        'neon-green-darker': neonColors.greenDarker,
+        'neon-yellow': neonColors.yellow,
       },
     },
   },
@@ -85,7 +120,7 @@ const tailwindConfig = {
           'animation-play-state': 'paused',
         },
         '.logo-shadow': {
-          'text-shadow': '4px 2px 0px oklch(var(--neon-green)), 8px 4px 30px oklch(var(--neon-green-light))',
+          'text-shadow': `4px 2px 0px ${neonColors.greenDark}, 8px 4px 30px ${neonColors.greenLight}`,
         },
         '.nav-h': {
           height: 'calc(100vh - 3rem - 3.5rem * 2)',
