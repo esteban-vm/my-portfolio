@@ -1,9 +1,9 @@
 'use client'
 
 import type { NavLink as INavLink } from '@/types'
-import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { clsx } from '@/utils'
 
 export default function NavLink({ title, route }: INavLink) {
   const pathname = usePathname()

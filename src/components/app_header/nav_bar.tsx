@@ -1,10 +1,10 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-device-sizes'
 import { LuMenu, LuX } from 'react-icons/lu'
+import { clsx } from '@/utils'
 
 export default function NavBar({ children }: { children: ReactNode }) {
   const [active, setActive] = useState(false)
@@ -30,7 +30,7 @@ export default function NavBar({ children }: { children: ReactNode }) {
       </button>
       <nav
         className={clsx(
-          'absolute right-0 z-10 flex w-full flex-col items-center justify-around text-nowrap bg-black/50 text-center shadow-inner animate__animated nav-h md:nav-h-md lg:static lg:size-auto lg:animate-none lg:flex-row lg:gap-8 lg:bg-transparent',
+          'absolute right-0 z-10 flex w-full flex-col items-center justify-around text-nowrap bg-black/50 text-center animate__animated nav-h md:nav-h-md lg:static lg:size-auto lg:animate-none lg:flex-row lg:gap-8 lg:bg-transparent',
           active ? 'top-[150%] animate__backInDown' : 'top-0 animate__backOutUp'
         )}
       >
