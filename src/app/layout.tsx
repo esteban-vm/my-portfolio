@@ -1,9 +1,9 @@
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import clsx from 'clsx'
 import localFont from 'next/font/local'
 import { AppHeader } from '@/components'
+import { clsx } from '@/utils'
 
 export const metadata: Metadata = {
   description: "Esteban V.M.'s portfolio website",
