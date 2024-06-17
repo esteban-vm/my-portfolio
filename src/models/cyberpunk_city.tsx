@@ -11,6 +11,8 @@
 import type * as THREE from 'three'
 import type { GLTF } from 'three-stdlib'
 import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { useSceneContext } from '@/contexts'
 import { getModelPath } from '@/utils'
 
 interface GLTFResult extends GLTF {
@@ -30,6 +32,32 @@ const path = getModelPath('cyberpunk_city')
 
 export default function CyberpunkCity(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(path) as GLTFResult
+  const { setCurrentStage } = useSceneContext()
+
+  useFrame(({ camera }) => {
+    const cameraX = camera.position.x
+
+    switch (true) {
+      case cameraX >= -1 && cameraX <= 1:
+        setCurrentStage(1)
+        break
+      case cameraX >= 1.5 && cameraX <= 5:
+      case cameraX <= -1.5 && cameraX >= -5:
+        setCurrentStage(2)
+        break
+      case cameraX >= 5.5 && cameraX <= 9:
+      case cameraX <= -5.5 && cameraX >= -9:
+        setCurrentStage(3)
+        break
+      case cameraX >= 9.5:
+      case cameraX <= -9.5:
+        setCurrentStage(4)
+        break
+      default:
+        setCurrentStage(null)
+        break
+    }
+  })
 
   return (
     <group {...props} dispose={null}>
