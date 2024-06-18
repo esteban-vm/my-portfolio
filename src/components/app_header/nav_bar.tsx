@@ -8,7 +8,7 @@ import { clsx } from '@/utils'
 
 export default function NavBar({ children }: { children: ReactNode }) {
   const [isActive, setIsActive] = useState(false)
-  const isMediumDevice = useMediaQuery({ query: '(max-width: 1023px)' })
+  const isMediumDevice = useMediaQuery({ maxWidth: 1_023 })
   const toggleMenu = () => setIsActive(!isActive)
 
   useEffect(() => {
