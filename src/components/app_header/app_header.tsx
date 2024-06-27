@@ -1,8 +1,7 @@
-'use client'
-
 import { useId, useState } from 'react'
 import { navLinks } from '@/constants'
 import AppLogo from './app_logo'
+import HeaderWrapper from './header_wrapper'
 import MobileButton from './mobile_button'
 import NavBar from './nav_bar'
 import NavLink from './nav_link'
@@ -15,10 +14,7 @@ export default function AppHeader() {
   const closeNavBar = () => setIsOpen(false)
 
   return (
-    <header
-      aria-labelledby={logoId}
-      className='container pointer-events-none absolute left-1/2 top-14 z-20 -translate-x-1/2 select-none [&_a]:pointer-events-auto'
-    >
+    <HeaderWrapper aria-labelledby={logoId}>
       <div className='relative flex w-full items-center justify-around'>
         <AppLogo id={logoId} onClick={closeNavBar} />
         <MobileButton isOpen={isOpen} onClick={toggleNavBar} />
@@ -28,6 +24,6 @@ export default function AppHeader() {
           ))}
         </NavBar>
       </div>
-    </header>
+    </HeaderWrapper>
   )
 }
