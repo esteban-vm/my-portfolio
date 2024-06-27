@@ -1,15 +1,21 @@
+import type { HTMLAttributes } from 'react'
 import Link from 'next/link'
+import { clsx } from '@/utils'
 
-export default function AppLogo() {
+interface AppLogoProps extends HTMLAttributes<HTMLHeadingElement> {}
+
+export default function AppLogo(props: AppLogoProps) {
+  const classes = clsx(
+    'animate-glitch text-wrap text-center font-saiba45 text-5xl',
+    'text-neon-yellow logo-shadow hover:animate-none md:text-6xl lg:text-7xl'
+  )
+
   return (
-    <Link href='/' data-navigation>
-      <h1
-        className='animate-glitch text-wrap text-center font-saiba45 text-5xl text-neon-yellow logo-shadow hover:animate-none md:text-6xl lg:text-7xl'
-        id='app_logo'
-      >
+    <h1 {...props}>
+      <Link className={classes} href='/'>
         Esteban
         <span className='hidden font-saiba45 md:inline'>&nbsp;V.M.</span>
-      </h1>
-    </Link>
+      </Link>
+    </h1>
   )
 }
