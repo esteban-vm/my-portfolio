@@ -1,12 +1,12 @@
 import type { LinkProps } from 'next/link'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { clsx } from '@/utils'
 
-export default function NavLink<T extends string>({ href, ...rest }: LinkProps<T>) {
+export default function Link<T extends string>({ href, ...rest }: LinkProps<T>) {
   const pathname = usePathname()
 
-  const classes = clsx(
+  const className = clsx(
     'relative inline-block font-bold uppercase text-neon-yellow after:bottom-0 after:left-0',
     'after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-yellow',
     'after:transition-transform after:duration-200 after:ease-out after:content-[""] hover:opacity-90',
@@ -14,5 +14,5 @@ export default function NavLink<T extends string>({ href, ...rest }: LinkProps<T
     pathname === href && '!text-neon-green-dark after:!bg-neon-green-dark'
   )
 
-  return <Link {...rest} className={classes} href={href} />
+  return <NextLink {...rest} className={className} href={href} />
 }

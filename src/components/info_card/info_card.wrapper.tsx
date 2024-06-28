@@ -1,9 +1,9 @@
 import type { HTMLAttributes } from 'react'
 import { useSceneContext } from '@/contexts'
 
-interface CardWrapperProps extends HTMLAttributes<HTMLDivElement> {}
+interface WrapperProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default function CardWrapper(props: CardWrapperProps) {
+export default function Wrapper(props: WrapperProps) {
   const { setIsAnimated } = useSceneContext()
   const rotate = () => setIsAnimated(true)
   const stop = () => setIsAnimated(false)
