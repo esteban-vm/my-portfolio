@@ -1,10 +1,10 @@
 import { useId, useState } from 'react'
 import { navLinks } from '@/constants'
-import AppLogo from './app_logo'
-import HeaderWrapper from './header_wrapper'
-import MobileButton from './mobile_button'
-import NavBar from './nav_bar'
-import NavLink from './nav_link'
+import Logo from './app_header.logo'
+import Wrapper from './app_header.wrapper'
+import Navbar from './nav_bar'
+import Button from './nav_bar.button'
+import Link from './nav_bar.link'
 
 export default function AppHeader() {
   const logoId = useId()
@@ -14,16 +14,16 @@ export default function AppHeader() {
   const closeNavBar = () => setIsOpen(false)
 
   return (
-    <HeaderWrapper aria-labelledby={logoId}>
+    <Wrapper aria-labelledby={logoId}>
       <div className='relative flex w-full items-center justify-around'>
-        <AppLogo id={logoId} onClick={closeNavBar} />
-        <MobileButton isOpen={isOpen} onClick={toggleNavBar} />
-        <NavBar isOpen={isOpen}>
+        <Logo id={logoId} onClick={closeNavBar} />
+        <Button isOpen={isOpen} onClick={toggleNavBar} />
+        <Navbar isOpen={isOpen}>
           {navLinks.map((link) => (
-            <NavLink key={link.id} onClick={closeNavBar} {...link} />
+            <Link key={link.id} onClick={closeNavBar} {...link} />
           ))}
-        </NavBar>
+        </Navbar>
       </div>
-    </HeaderWrapper>
+    </Wrapper>
   )
 }

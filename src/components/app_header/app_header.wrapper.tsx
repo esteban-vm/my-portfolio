@@ -1,8 +1,8 @@
 import type { HTMLAttributes } from 'react'
 
-interface HeaderWrapperProps extends HTMLAttributes<HTMLElement> {}
+interface WrapperProps extends HTMLAttributes<HTMLElement> {}
 
-export default function HeaderWrapper(props: HeaderWrapperProps) {
+export default function Wrapper(props: WrapperProps) {
   return (
     <header
       {...props}
