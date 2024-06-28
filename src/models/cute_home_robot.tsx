@@ -37,7 +37,7 @@ interface GLTFAction extends THREE.AnimationClip {
   name: 'Take 001'
 }
 
-const path = getModelPath('cute_home_robot')
+const path = getModelPath('robot')
 
 export default function CuteHomeRobot(props: JSX.IntrinsicElements['group']) {
   const modelRef = useRef<THREE.Group>(null!)
