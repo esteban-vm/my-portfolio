@@ -1,34 +1,48 @@
-import plugin from 'tailwindcss/plugin'
+// @ts-check
 
-const neonColors = /** @type {const} */ ({
-  /** #a4d3be */
-  greenLighter: 'oklch(var(--neon-green-lighter))',
-  /** #0cffed */
-  greenLight: 'oklch(var(--neon-green-light))',
-  /** #00e0c0 */
-  greenDark: 'oklch(var(--neon-green-dark))',
-  /** #17c47c */
-  greenDarker: 'oklch(var(--neon-green-darker))',
-  /** #d3fc17 */
-  yellow: 'oklch(var(--neon-yellow))',
-})
+import fluid, { extract, fontSize, screens } from 'fluid-tailwind'
+import plugin from 'tailwindcss/plugin'
+import twAnimate from 'tailwindcss-animate'
+import twTouch from 'tailwindcss-touch'
+
+/**
+ * @typedef {`green-${'light' | 'lighter' | 'dark' | 'darker'}` | 'yellow'} NeonColor
+ **/
+
+/**
+ * @template {NeonColor} T
+ * @param {T} color
+ **/
+const makeNeonColor = (color) => {
+  const key = /** @type {const} */ (`neon-${color}`)
+  const value = /** @type {const} */ (`oklch(var(--${key}))`)
+  return { key, value, obj: { [key]: value } }
+}
+
+/** #a4d3be */
+const greenLighter = makeNeonColor('green-lighter')
+/** #0cffed */
+const greenLight = makeNeonColor('green-light')
+/** #00e0c0 */
+const greenDark = makeNeonColor('green-dark')
+/** #17c47c */
+const greenDarker = makeNeonColor('green-darker')
+/** #d3fc17 */
+const yellow = makeNeonColor('yellow')
 
 /** @type {import("tailwindcss").Config} */
 const tailwindConfig = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: {
+    extract,
+    files: ['./src/(app|components|scenes|shared)/**/*.{js,ts,jsx,tsx,mdx}'],
+  },
   theme: {
+    screens,
+    fontSize,
     extend: {
       fontFamily: {
-        montserrat: 'var(--font-montserrat)',
         saiba45: 'var(--font-saiba45)',
-      },
-      animatedSettings: {
-        animatedSpeed: 500,
-        classes: ['backInDown', 'backOutUp'],
+        montserrat: 'var(--font-montserrat)',
       },
       textShadow: {
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
@@ -38,28 +52,190 @@ const tailwindConfig = {
       keyframes: {
         glitch: {
           '0%': {
-            'clip-path':
-              'polygon(96% 81%, 23% 67%, 3% 70%, 81% 58%, 63% 65%, 71% 18%, 60% 85%, 22% 27%, 26% 25%, 60% 53%, 79% 62%, 61% 6%, 8% 1%, 12% 81%, 12% 21%, 75% 7%, 31% 61%, 69% 79%, 41% 46%, 3% 7%, 94% 96%, 16% 40%, 10% 99%, 22% 67%, 83% 41%, 92% 76%)',
+            'clip-path': `
+              polygon(
+                96% 81%,
+                23% 67%,
+                3% 70%,
+                81% 58%,
+                63% 65%,
+                71% 18%,
+                60% 85%,
+                22% 27%,
+                26% 25%,
+                60% 53%,
+                79% 62%,
+                61% 6%,
+                8% 1%,
+                12% 81%,
+                12% 21%,
+                75% 7%,
+                31% 61%,
+                69% 79%,
+                41% 46%,
+                3% 7%,
+                94% 96%,
+                16% 40%,
+                10% 99%,
+                22% 67%,
+                83% 41%,
+                92% 76%
+              )`,
           },
           '4%': {
-            'clip-path':
-              'polygon(25% 86%, 59% 45%, 12% 89%, 25% 14%, 1% 82%, 36% 13%, 85% 53%, 59% 8%, 12% 76%, 69% 93%, 3% 49%, 74% 64%, 6% 87%, 36% 94%, 55% 30%, 53% 16%, 26% 39%, 7% 69%, 23% 96%, 83% 38%, 33% 25%, 7% 36%, 28% 41%, 27% 85%, 9% 77%, 64% 47%)',
+            'clip-path': `
+              polygon(
+                25% 86%,
+                59% 45%,
+                12% 89%,
+                25% 14%,
+                1% 82%,
+                36% 13%,
+                85% 53%,
+                59% 8%,
+                12% 76%,
+                69% 93%,
+                3% 49%,
+                74% 64%,
+                6% 87%,
+                36% 94%,
+                55% 30%,
+                53% 16%,
+                26% 39%,
+                7% 69%,
+                23% 96%,
+                83% 38%,
+                33% 25%,
+                7% 36%,
+                28% 41%,
+                27% 85%,
+                9% 77%,
+                64% 47%
+              )`,
           },
           '27%': {
-            'clip-path':
-              'polygon(39% 7%, 81% 81%, 97% 19%, 37% 54%, 19% 66%, 98% 57%, 10% 45%, 60% 82%, 10% 96%, 46% 53%, 70% 68%, 89% 24%, 6% 45%, 81% 29%, 68% 54%, 77% 32%, 90% 44%, 28% 36%, 66% 72%, 12% 98%, 83% 10%, 11% 71%, 71% 78%, 11% 93%, 50% 29%, 36% 36%)',
+            'clip-path': `
+              polygon(
+                39% 7%,
+                81% 81%,
+                97% 19%,
+                37% 54%,
+                19% 66%,
+                98% 57%,
+                10% 45%,
+                60% 82%,
+                10% 96%,
+                46% 53%,
+                70% 68%,
+                89% 24%,
+                6% 45%,
+                81% 29%,
+                68% 54%,
+                77% 32%,
+                90% 44%,
+                28% 36%,
+                66% 72%,
+                12% 98%,
+                83% 10%,
+                11% 71%,
+                71% 78%,
+                11% 93%,
+                50% 29%,
+                36% 36%
+              )`,
           },
           '51%': {
-            'clip-path':
-              'polygon(18% 34%, 31% 77%, 73% 57%, 69% 50%, 62% 33%, 34% 10%, 3% 66%, 76% 4%, 44% 97%, 43% 50%, 68% 3%, 72% 17%, 94% 57%, 46% 74%, 69% 17%, 56% 24%, 93% 59%, 10% 84%, 93% 76%, 70% 26%, 93% 2%, 84% 83%, 25% 4%, 49% 93%, 14% 64%, 31% 60%)',
+            'clip-path': `
+              polygon(
+                18% 34%,
+                31% 77%,
+                73% 57%,
+                69% 50%,
+                62% 33%,
+                34% 10%,
+                3% 66%,
+                76% 4%,
+                44% 97%,
+                43% 50%,
+                68% 3%,
+                72% 17%,
+                94% 57%,
+                46% 74%,
+                69% 17%,
+                56% 24%,
+                93% 59%,
+                10% 84%,
+                93% 76%,
+                70% 26%,
+                93% 2%,
+                84% 83%,
+                25% 4%,
+                49% 93%,
+                14% 64%,
+                31% 60%
+              )`,
           },
           '66%': {
-            'clip-path':
-              'polygon(91% 2%, 50% 60%, 51% 75%, 11% 27%, 96% 3%, 36% 12%, 22% 49%, 21% 75%, 13% 30%, 29% 41%, 2% 76%, 72% 52%, 40% 56%, 19% 38%, 32% 7%, 30% 34%, 3% 27%, 48% 17%, 1% 33%, 16% 41%, 24% 21%, 47% 42%, 16% 4%, 81% 91%, 45% 83%, 21% 21%)',
+            'clip-path': `
+              polygon(
+                91% 2%,
+                50% 60%,
+                51% 75%,
+                11% 27%,
+                96% 3%,
+                36% 12%,
+                22% 49%,
+                21% 75%,
+                13% 30%,
+                29% 41%,
+                2% 76%,
+                72% 52%,
+                40% 56%,
+                19% 38%,
+                32% 7%,
+                30% 34%,
+                3% 27%,
+                48% 17%,
+                1% 33%,
+                16% 41%,
+                24% 21%,
+                47% 42%,
+                16% 4%,
+                81% 91%,
+                45% 83%,
+                21% 21%
+              )`,
           },
           '91%': {
-            'clip-path':
-              'polygon(21% 73%, 5% 5%, 41% 55%, 3% 59%, 99% 94%, 66% 86%, 30% 46%, 69% 100%, 81% 83%, 34% 55%, 36% 8%, 2% 5%, 94% 91%, 90% 71%, 38% 92%, 55% 46%, 67% 68%, 59% 98%, 30% 87%, 22% 45%, 59% 76%, 47% 6%, 79% 3%, 20% 61%, 61% 96%, 46% 18%)',
+            'clip-path': `
+              polygon(
+                21% 73%,
+                5% 5%,
+                41% 55%,
+                3% 59%,
+                99% 94%,
+                66% 86%,
+                30% 46%,
+                69% 100%,
+                81% 83%,
+                34% 55%,
+                36% 8%,
+                2% 5%,
+                94% 91%,
+                90% 71%,
+                38% 92%,
+                55% 46%,
+                67% 68%,
+                59% 98%,
+                30% 87%,
+                22% 45%,
+                59% 76%,
+                47% 6%,
+                79% 3%,
+                20% 61%,
+                61% 96%,
+                46% 18%
+              )`,
           },
           '1%, 5%, 28%, 53%, 67%, 92%': {
             'clip-path': 'none',
@@ -67,35 +243,35 @@ const tailwindConfig = {
         },
         blink: {
           '0%, 100%': {
-            'background-color': neonColors.greenDarker,
+            'background-color': greenDarker.value,
             'box-shadow': `
-              0 0 5px ${neonColors.greenDarker},
-              0 0 25px ${neonColors.greenDarker},
-              0 0 50px ${neonColors.greenDarker},
-              0 0 200px ${neonColors.greenDarker}
+              0 0 5px ${greenDarker.value},
+              0 0 25px ${greenDarker.value},
+              0 0 50px ${greenDarker.value},
+              0 0 200px ${greenDarker.value}
             `,
           },
           '50%': {
-            'background-color': neonColors.greenLighter,
+            'background-color': greenLighter.value,
             'box-shadow': `
-              0 0 5px ${neonColors.greenLighter},
-              0 0 25px ${neonColors.greenLighter},
-              0 0 50px ${neonColors.greenLighter},
-              0 0 200px ${neonColors.greenLighter}
+              0 0 5px ${greenLighter.value},
+              0 0 25px ${greenLighter.value},
+              0 0 50px ${greenLighter.value},
+              0 0 200px ${greenLighter.value}
             `,
           },
         },
       },
       animation: {
         glitch: 'glitch 10s step-end infinite',
-        blink: 'blink 2s infinite linear',
+        blink: 'blink 10s infinite linear',
       },
       colors: {
-        'neon-green-lighter': neonColors.greenLighter,
-        'neon-green-light': neonColors.greenLight,
-        'neon-green-dark': neonColors.greenDark,
-        'neon-green-darker': neonColors.greenDarker,
-        'neon-yellow': neonColors.yellow,
+        ...greenLighter.obj,
+        ...greenLight.obj,
+        ...greenDark.obj,
+        ...greenDarker.obj,
+        ...yellow.obj,
       },
     },
   },
@@ -103,10 +279,10 @@ const tailwindConfig = {
     hoverOnlyWhenSupported: true,
   },
   plugins: [
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    require('tailwindcss-touch')(),
-    require('tailwindcss-animatecss'),
-    plugin(function ({ matchUtilities, theme, addUtilities }) {
+    fluid,
+    twAnimate,
+    twTouch(),
+    plugin(({ matchUtilities, theme, addUtilities }) => {
       matchUtilities(
         {
           'text-shadow': (value) => ({ textShadow: value }),
@@ -116,11 +292,8 @@ const tailwindConfig = {
         }
       )
       addUtilities({
-        '.animate-pause': {
-          'animation-play-state': 'paused',
-        },
         '.logo-shadow': {
-          'text-shadow': `4px 2px 0px ${neonColors.greenDark}, 8px 4px 30px ${neonColors.greenLight}`,
+          'text-shadow': `4px 2px 0px ${greenDark.value}, 8px 4px 30px ${greenLight.value}`,
         },
         '.nav-h': {
           height: 'calc(100vh - 3rem - 3.5rem * 2)',
