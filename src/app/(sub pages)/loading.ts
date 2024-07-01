@@ -1,1 +1,1 @@
-export { Loader as default } from '@/shared'
+export { LoaderSpinner as default } from '@/shared'
