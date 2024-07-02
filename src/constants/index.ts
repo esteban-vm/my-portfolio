@@ -1,9 +1,10 @@
 import type { LinkProps } from 'next/link'
+import { nanoid } from 'nanoid'
 
 export const navLinks: LinkProps<string>[] = [
-  { href: '/about', id: crypto.randomUUID(), children: 'About Me' },
-  { href: '/projects', id: crypto.randomUUID(), children: 'My Projects' },
-  { href: '/contact', id: crypto.randomUUID(), children: 'Contact Me' },
+  { href: '/about', id: nanoid(), children: 'About Me' },
+  { href: '/projects', id: nanoid(), children: 'My Projects' },
+  { href: '/contact', id: nanoid(), children: 'Contact Me' },
 ]
 
 export const models = <const>{
