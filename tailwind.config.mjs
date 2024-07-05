@@ -6,29 +6,14 @@ import twAnimate from 'tailwindcss-animate'
 import twTouch from 'tailwindcss-touch'
 
 /**
- * @typedef {`green-${'light' | 'lighter' | 'dark' | 'darker'}` | 'yellow'} NeonColor
- **/
-
-/**
- * @template {NeonColor} T
+ * @template {`green-${'light' | 'lighter' | 'dark' | 'darker'}` | 'yellow'} T
  * @param {T} color
  **/
-const makeNeonColor = (color) => {
+const neonColor = (color) => {
   const key = /** @type {const} */ (`neon-${color}`)
   const value = /** @type {const} */ (`oklch(var(--${key}))`)
-  return { key, value, obj: { [key]: value } }
+  return { [key]: value }
 }
-
-/** #a4d3be */
-const greenLighter = makeNeonColor('green-lighter')
-/** #0cffed */
-const greenLight = makeNeonColor('green-light')
-/** #00e0c0 */
-const greenDark = makeNeonColor('green-dark')
-/** #17c47c */
-const greenDarker = makeNeonColor('green-darker')
-/** #d3fc17 */
-const yellow = makeNeonColor('yellow')
 
 /** @type {import("tailwindcss").Config} */
 const tailwindConfig = {
@@ -49,7 +34,7 @@ const tailwindConfig = {
         sm: '0 1px 2px var(--tw-shadow-color)',
         lg: '0 8px 16px var(--tw-shadow-color)',
       },
-      keyframes: {
+      keyframes: ({ theme }) => ({
         glitch: {
           '0%': {
             'clip-path': `
@@ -243,35 +228,35 @@ const tailwindConfig = {
         },
         blink: {
           '0%, 100%': {
-            'background-color': greenDarker.value,
+            'background-color': theme('colors.neon-green-darker'),
             'box-shadow': `
-              0 0 5px ${greenDarker.value},
-              0 0 25px ${greenDarker.value},
-              0 0 50px ${greenDarker.value},
-              0 0 200px ${greenDarker.value}
+              0 0 5px ${theme('colors.neon-green-darker')},
+              0 0 25px ${theme('colors.neon-green-darker')},
+              0 0 50px ${theme('colors.neon-green-darker')},
+              0 0 200px ${theme('colors.neon-green-darker')}
             `,
           },
           '50%': {
-            'background-color': greenLighter.value,
+            'background-color': theme('colors.neon-green-lighter'),
             'box-shadow': `
-              0 0 5px ${greenLighter.value},
-              0 0 25px ${greenLighter.value},
-              0 0 50px ${greenLighter.value},
-              0 0 200px ${greenLighter.value}
+              0 0 5px ${theme('colors.neon-green-lighter')},
+              0 0 25px ${theme('colors.neon-green-lighter')},
+              0 0 50px ${theme('colors.neon-green-lighter')},
+              0 0 200px ${theme('colors.neon-green-lighter')}
             `,
           },
         },
-      },
+      }),
       animation: {
         glitch: 'glitch 10s step-end infinite',
         blink: 'blink 10s infinite linear',
       },
       colors: {
-        ...greenLighter.obj,
-        ...greenLight.obj,
-        ...greenDark.obj,
-        ...greenDarker.obj,
-        ...yellow.obj,
+        /* #a4d3be */ ...neonColor('green-lighter'),
+        /* #0cffed */ ...neonColor('green-light'),
+        /* #00e0c0 */ ...neonColor('green-dark'),
+        /* #17c47c */ ...neonColor('green-darker'),
+        /* #d3fc17 */ ...neonColor('yellow'),
       },
     },
   },
@@ -293,7 +278,7 @@ const tailwindConfig = {
       )
       addUtilities({
         '.logo-shadow': {
-          'text-shadow': `4px 2px 0px ${greenDark.value}, 8px 4px 30px ${greenLight.value}`,
+          'text-shadow': `4px 2px 0px ${theme('colors.neon-green-dark')}, 8px 4px 30px ${theme('colors.neon-green-light')}`,
         },
         '.nav-h': {
           height: 'calc(100vh - 3rem - 3.5rem * 2)',

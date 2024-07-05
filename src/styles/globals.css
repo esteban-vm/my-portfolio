@@ -14,4 +14,9 @@
   * {
     @apply font-montserrat selection:bg-neon-green-light selection:text-black motion-reduce:!animate-none;
   }
+
+  nav {
+    @apply border-4 border-solid lg:border-none;
+    border-image: linear-gradient(to bottom, theme('colors.neon-green-light'), theme('colors.transparent')) 1 100%;
+  }
 }

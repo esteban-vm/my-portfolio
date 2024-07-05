@@ -10,21 +10,21 @@ export default function AppHeader() {
   const logoId = useId()
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleNavbar = () => {
+  const toggleMobileNavBar = () => {
     setIsOpen(!isOpen)
     navigator.vibrate?.(10)
   }
 
-  const closeNavbar = () => setIsOpen(false)
+  const closeMobileNavBar = () => setIsOpen(false)
 
   return (
     <Wrapper aria-labelledby={logoId}>
       <div className='relative flex w-full items-center justify-around'>
-        <Logo id={logoId} onClick={closeNavbar} />
-        <Button isOpen={isOpen} onClick={toggleNavbar} />
+        <Logo id={logoId} onClick={closeMobileNavBar} />
+        <Button isOpen={isOpen} onClick={toggleMobileNavBar} />
         <Navbar isOpen={isOpen}>
           {navLinks.map((link) => (
-            <Link key={link.id} onClick={closeNavbar} {...link} />
+            <Link key={link.id} onClick={closeMobileNavBar} {...link} />
           ))}
         </Navbar>
       </div>
