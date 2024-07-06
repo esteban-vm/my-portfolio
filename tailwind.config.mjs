@@ -278,7 +278,18 @@ const tailwindConfig = {
       )
       addUtilities({
         '.logo-shadow': {
-          'text-shadow': `4px 2px 0px ${theme('colors.neon-green-dark')}, 8px 4px 30px ${theme('colors.neon-green-light')}`,
+          'text-shadow': `
+            4px 2px 0px ${theme('colors.neon-green-dark')},
+            8px 4px 30px ${theme('colors.neon-green-light')}
+          `,
+        },
+        '.link-shadow': {
+          'box-shadow': `
+            0px 1px 2px 0px ${theme('colors.neon-green-light')},
+            1px 2px 4px 0px ${theme('colors.neon-green-light')},
+            2px 4px 8px 0px ${theme('colors.neon-green-light')},
+            2px 4px 16px 0px ${theme('colors.neon-green-light')}
+          `,
         },
         '.nav-h': {
           height: 'calc(100vh - 3rem - 3.5rem * 2)',
