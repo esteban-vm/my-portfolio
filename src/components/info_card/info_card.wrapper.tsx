@@ -6,22 +6,22 @@ interface WrapperProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Wrapper(props: WrapperProps) {
   const { setIsAnimated } = useSceneContext()
-  const rotate = () => setIsAnimated(true)
-  const stop = () => setIsAnimated(false)
+  const rotateScene = () => setIsAnimated(true)
+  const stopScene = () => setIsAnimated(false)
 
   const classes = clsx(
-    'absolute left-1/2 top-40 z-10 -translate-x-1/2 animate-blink bg-neon-green-dark text-center',
-    'font-semibold uppercase text-black transition-all ~text-xs/base ~w-80/[36rem] ~p-3/5 hover:paused'
+    'absolute left-1/2 top-40 z-10 -translate-x-1/2 animate-blink rounded-md bg-neon-green-dark',
+    'text-center font-semibold uppercase text-black transition-all ~w-80/[36rem] ~p-3/5 hover:paused'
   )
 
   return (
     <div
       {...props}
       className={classes}
-      onPointerEnter={stop}
-      onPointerLeave={rotate}
-      onPointerOut={rotate}
-      onPointerOver={stop}
+      onPointerEnter={stopScene}
+      onPointerLeave={rotateScene}
+      onPointerOut={rotateScene}
+      onPointerOver={stopScene}
     />
   )
 }
