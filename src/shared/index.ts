@@ -1,1 +1,1 @@
-export { default as LoaderSpinner } from './loader_spinner'
+export { default as LoadingSpinner } from './loading_spinner'

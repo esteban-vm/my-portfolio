@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import { useSceneContext } from '@/contexts'
 import { CyberpunkCity, CyberpunkGhettoDeLorean } from '@/models'
-import { LoaderSpinner } from '@/shared'
+import { LoadingSpinner } from '@/shared'
 
 export default function HomeScene() {
   const { isMobile, isAnimated } = useSceneContext()
@@ -13,7 +13,7 @@ export default function HomeScene() {
       <Suspense
         fallback={
           <Html center>
-            <LoaderSpinner size={30} />
+            <LoadingSpinner size={30} />
           </Html>
         }
       >
