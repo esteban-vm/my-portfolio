@@ -15,7 +15,8 @@
     @apply font-montserrat selection:bg-neon-green-light selection:text-black motion-reduce:!animate-none;
   }
 
-  a {
+  a,
+  button {
     @apply select-none;
   }
 

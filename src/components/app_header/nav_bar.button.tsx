@@ -9,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({ isOpen, ...rest }: ButtonProps) {
   const classes = clsx(
     'pointer-events-auto flex items-center justify-center text-neon-yellow',
-    'lg:hidden [&>svg]:size-8 active:[&>svg]:scale-90 md:[&>svg]:size-10'
+    'lg:hidden [&>svg]:~size-8/10 active:[&>svg]:scale-90'
   )
 
   return (
