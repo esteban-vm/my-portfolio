@@ -19,7 +19,7 @@ export default function AppHeader() {
 
   return (
     <Wrapper aria-labelledby={logoId}>
-      <div className='relative flex w-full items-center justify-around'>
+      <div className='relative flex size-full items-center justify-around'>
         <Logo id={logoId} onClick={closeNavBar} />
         <Button isOpen={isOpen} onClick={toggleNavBar} />
         <NavBar isOpen={isOpen}>

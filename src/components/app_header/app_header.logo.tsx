@@ -6,8 +6,8 @@ interface LogoProps extends HTMLAttributes<HTMLHeadingElement> {}
 
 export default function Logo(props: LogoProps) {
   const classes = clsx(
-    'animate-glitch text-wrap text-center font-saiba45 text-5xl',
-    'text-neon-yellow logo-shadow hover:animate-none md:text-6xl lg:text-7xl'
+    'animate-glitch text-wrap text-center font-saiba45',
+    'text-neon-yellow ~text-4xl/7xl logo-shadow hover:animate-none'
   )
 
   return (

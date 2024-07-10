@@ -13,10 +13,10 @@ export default function Content({ href, mainText, linkText = 'Learn more…' }: 
   return (
     <Wrapper>
       <div className='relative'>
-        <p className='line-clamp-3 text-pretty ~text-sm/base'>{mainText}</p>
+        <p className='line-clamp-3 text-pretty ~text-xs/base'>{mainText}</p>
         {href && (
           <Link href={href}>
-            <span className='inline text-pretty align-middle ~text-xs/sm'>{linkText}</span>
+            <span className='align-middle ~text-2xs/sm'>{linkText}</span>
             <LuArrowBigRight aria-label={linkText} className='inline ~size-4/5' />
           </Link>
         )}

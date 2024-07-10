@@ -25,6 +25,9 @@ const tailwindConfig = {
     screens,
     fontSize,
     extend: {
+      fontSize: {
+        '2xs': '0.625rem',
+      },
       fontFamily: {
         saiba45: 'var(--font-saiba45)',
         montserrat: 'var(--font-montserrat)',
@@ -231,25 +234,25 @@ const tailwindConfig = {
             'background-color': theme('colors.neon-green-darker'),
             'box-shadow': `
               0 0 5px ${theme('colors.neon-green-darker')},
-              0 0 25px ${theme('colors.neon-green-darker')},
-              0 0 50px ${theme('colors.neon-green-darker')},
-              0 0 200px ${theme('colors.neon-green-darker')}
+              0 0 10px ${theme('colors.neon-green-darker')},
+              0 0 15px ${theme('colors.neon-green-darker')},
+              0 0 20px ${theme('colors.neon-green-darker')}
             `,
           },
           '50%': {
             'background-color': theme('colors.neon-green-lighter'),
             'box-shadow': `
               0 0 5px ${theme('colors.neon-green-lighter')},
-              0 0 25px ${theme('colors.neon-green-lighter')},
-              0 0 50px ${theme('colors.neon-green-lighter')},
-              0 0 200px ${theme('colors.neon-green-lighter')}
+              0 0 10px ${theme('colors.neon-green-lighter')},
+              0 0 15px ${theme('colors.neon-green-lighter')},
+              0 0 20px ${theme('colors.neon-green-lighter')}
             `,
           },
         },
       }),
       animation: {
         glitch: 'glitch 10s step-end infinite',
-        blink: 'blink 10s infinite linear',
+        blink: 'blink 5s infinite linear',
       },
       colors: {
         /* #a4d3be */ ...neonColor('green-lighter'),
@@ -291,11 +294,11 @@ const tailwindConfig = {
             2px 4px 16px 0px ${theme('colors.neon-green-light')}
           `,
         },
-        '.nav-h': {
-          height: 'calc(100vh - 3rem - 3.5rem * 2)',
+        '.nav-height-sm': {
+          height: `calc(89vh - ${theme('spacing.4')})`,
         },
-        '.nav-h-md': {
-          height: 'calc(100vh - 3.75rem - 3.5rem * 2)',
+        '.nav-height-md': {
+          height: `calc(88vh - ${theme('spacing.4')})`,
         },
       })
     }),
