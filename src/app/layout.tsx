@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import localFont from 'next/font/local'
-import { AppHeader } from '@/components'
+import { AppFooter, AppHeader } from '@/components'
 import { clsx } from '@/utils'
 
 export const metadata: Metadata = {
@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main className={clsx('relative h-screen bg-black', montserrat.variable, saiba45.variable)}>
           <AppHeader />
           {children}
+          <AppFooter />
         </main>
       </body>
     </html>

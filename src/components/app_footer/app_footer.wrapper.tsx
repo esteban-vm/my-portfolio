@@ -5,9 +5,9 @@ interface WrapperProps extends HTMLAttributes<HTMLElement> {}
 
 export default function Wrapper(props: WrapperProps) {
   const classes = clsx(
-    'container pointer-events-none absolute left-1/2 top-14 z-30',
-    '-translate-x-1/2 pointer-coarse:top-10 [&_a]:pointer-events-auto'
+    'container pointer-events-none absolute bottom-3 left-1/2 z-20',
+    'flex -translate-x-1/2 items-center justify-around text-white'
   )
 
-  return <header {...props} className={classes} />
+  return <footer {...props} className={classes} />
 }
