@@ -24,4 +24,9 @@
     @apply rounded-b-lg border-4 border-solid border-transparent lg:rounded-none lg:border-none;
     border-image: linear-gradient(to bottom, theme('colors.neon-green-light'), theme('colors.transparent')) 1 100%;
   }
+
+  img:has(+ input[type='checkbox']),
+  input[type='checkbox'] + img {
+    @apply inline w-auto contrast-125 ~h-8/12;
+  }
 }

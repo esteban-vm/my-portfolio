@@ -16,7 +16,7 @@ export default function LanguageSwitcher(props: LanguageSwitcherProps) {
   )
 
   return (
-    <div className='inline select-none text-center [&>img]:inline [&>img]:w-auto [&>img]:contrast-125 [&>img]:~h-8/12'>
+    <div className='inline select-none text-center'>
       <Image alt='Spain flag' src={spFlag} />
       &nbsp;
       <input {...props} className={classes} type='checkbox' />
