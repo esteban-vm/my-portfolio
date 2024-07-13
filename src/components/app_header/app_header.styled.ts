@@ -105,7 +105,7 @@ export const NavBar = tw.nav<NavBarProps>`
 
 `
 
-export const NavItem = tw.a<NavLinkProps>`
+export const NavItem = tw.a<NavItemProps>`
 
   ${({ $isActive }) => $isActive && dynamicClasses.activeLink}
 
@@ -187,7 +187,7 @@ interface NavBarProps {
   $isOpen: boolean
 }
 
-interface NavLinkProps {
+interface NavItemProps {
   $isActive: boolean
 }
 
