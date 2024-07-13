@@ -37,11 +37,13 @@ export const LinkContent = tw.a`
 
   ~py-1/3
 
-  link-shadow
+  neon-shadow
 
   hover:opacity-95
 
   active:scale-90
+
+  [&>svg]:fill-neon-green-darker
 
 `
 
