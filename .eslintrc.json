@@ -17,7 +17,7 @@
     "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] }
   },
   "rules": {
-    "prettier/prettier": "warn",
+    "prettier/prettier": "off",
     "react/function-component-definition": [
       "warn",
       { "namedComponents": "function-declaration", "unnamedComponents": "arrow-function" }
@@ -31,7 +31,6 @@
     "@typescript-eslint/consistent-type-definitions": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/ban-ts-comment": "off",
-    "tailwindcss/classnames-order": "off",
     "import/no-named-as-default": "off",
     "import/order": [
       "warn",

@@ -7,7 +7,8 @@
   "bracketSpacing": true,
   "jsxSingleQuote": true,
   "endOfLine": "crlf",
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-tailwind-styled-components"],
   "pluginSearchDirs": false,
-  "tailwindFunctions": ["clsx"]
+  "tailwindFunctions": ["clsx"],
+  "tailwindConfig": "./tailwind.config.mjs"
 }

@@ -1,7 +1,6 @@
 import type { Route } from 'next'
-import { LuArrowBigRight } from 'react-icons/lu'
-import Link from './info_card.link'
-import Wrapper from './info_card.wrapper'
+import { useSceneContext } from '@/contexts'
+import { ArrowIcon, InfoLink, LinkText, MainText, Wrapper } from './info_card.styled'
 
 interface ContentProps {
   href?: Route
@@ -10,15 +9,24 @@ interface ContentProps {
 }
 
 export default function Content({ href, mainText, linkText = 'Learn more…' }: ContentProps) {
+  const { setIsAnimated } = useSceneContext()
+  const rotateScene = () => setIsAnimated(true)
+  const stopScene = () => setIsAnimated(false)
+
   return (
-    <Wrapper>
-      <div className='relative'>
-        <p className='line-clamp-3 text-pretty ~text-xs/base'>{mainText}</p>
+    <Wrapper
+      onPointerEnter={stopScene}
+      onPointerLeave={rotateScene}
+      onPointerOut={rotateScene}
+      onPointerOver={stopScene}
+    >
+      <div>
+        <MainText>{mainText}</MainText>
         {href && (
-          <Link href={href}>
-            <span className='align-middle ~text-2xs/sm'>{linkText}</span>
-            <LuArrowBigRight aria-label={linkText} className='inline ~size-4/5' />
-          </Link>
+          <InfoLink href={href}>
+            <LinkText>{linkText}</LinkText>
+            <ArrowIcon aria-label={linkText} />
+          </InfoLink>
         )}
       </div>
     </Wrapper>
