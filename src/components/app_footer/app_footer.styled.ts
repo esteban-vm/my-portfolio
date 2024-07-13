@@ -1,47 +1,25 @@
 import Image from 'next/image'
 import tw from 'tailwind-styled-components'
 
-export const Wrapper = tw.footer`
+export const FlagImage = tw(Image)`
 
-  container
+  inline
 
-  pointer-events-none
+  w-auto
 
-  absolute
+  contrast-125
 
-  bottom-3
-
-  left-1/2
-
-  z-20
-
-  flex
-
-  -translate-x-1/2
-
-  items-center
-
-  justify-around
-
-  text-white
+  ~h-8/12
 
 `
 
-export const MusicButton = tw.button`
+export const InnerWrapper = tw.div`
 
-  pointer-events-auto
+  inline
 
-  flex
+  select-none
 
-  items-center
-
-  justify-center
-
-  rounded-full
-
-  bg-orange-500
-
-  ~size-8/12
+  text-center
 
 `
 
@@ -123,24 +101,46 @@ export const LanguageSwitch = tw.input`
 
 `
 
-export const InnerWrapper = tw.div`
+export const MusicButton = tw.button`
 
-  inline
+  pointer-events-auto
 
-  select-none
+  flex
 
-  text-center
+  items-center
+
+  justify-center
+
+  rounded-full
+
+  bg-orange-500
+
+  ~size-8/12
 
 `
 
-export const FlagImage = tw(Image)`
+export const Wrapper = tw.footer`
 
-  inline
+  container
 
-  w-auto
+  pointer-events-none
 
-  contrast-125
+  absolute
 
-  ~h-8/12
+  bottom-3
+
+  left-1/2
+
+  z-20
+
+  flex
+
+  -translate-x-1/2
+
+  items-center
+
+  justify-around
+
+  text-white
 
 `

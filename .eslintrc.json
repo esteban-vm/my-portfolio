@@ -10,7 +10,7 @@
   ],
   "globals": { "vi": true },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["prettier", "tailwindcss", "jsx-a11y", "import", "vitest"],
+  "plugins": ["prettier", "tailwindcss", "jsx-a11y", "import", "vitest", "sort-exports"],
   "ignorePatterns": ["node_modules", "build", "public", ".next"],
   "settings": {
     "import/resolver": { "typescript": true, "node": true },
@@ -41,6 +41,7 @@
         "groups": ["unknown", "type", "builtin", "external", "internal", "parent", "sibling", "index"],
         "pathGroups": [{ "group": "unknown", "pattern": "{.,@}/**/*.{css,scss}", "position": "before" }]
       }
-    ]
+    ],
+    "sort-exports/sort-exports": ["warn", { "sortDir": "asc" }]
   }
 }

@@ -2,43 +2,11 @@ import Link from 'next/link'
 import { LuArrowBigRight } from 'react-icons/lu'
 import tw from 'tailwind-styled-components'
 
-export const Wrapper = tw.div`
+export const ArrowIcon = tw(LuArrowBigRight)`
 
-  absolute
+  inline
 
-  left-1/2
-
-  top-[14vh]
-
-  z-10
-
-  -translate-x-1/2
-
-  animate-blink
-
-  rounded-md
-
-  bg-neon-green-dark
-
-  text-center
-
-  font-semibold
-
-  uppercase
-
-  text-black
-
-  ~w-80/[36rem]
-
-  ~p-3/5
-
-  hover:paused
-
-  md:top-[15vh]
-
-  lg:top-[16vh]
-
-  [&>div]:relative
+  ~size-4/5
 
 `
 
@@ -78,6 +46,14 @@ export const InfoLink = tw(Link)`
 
 `
 
+export const LinkText = tw.span`
+
+  align-middle
+
+  ~text-2xs/sm
+
+`
+
 export const MainText = tw.p`
 
   line-clamp-3
@@ -88,18 +64,42 @@ export const MainText = tw.p`
 
 `
 
-export const LinkText = tw.span`
+export const Wrapper = tw.div`
 
-  align-middle
+  absolute
 
-  ~text-2xs/sm
+  left-1/2
 
-`
+  top-[14vh]
 
-export const ArrowIcon = tw(LuArrowBigRight)`
+  z-10
 
-  inline
+  -translate-x-1/2
 
-  ~size-4/5
+  animate-blink
+
+  rounded-md
+
+  bg-neon-green-dark
+
+  text-center
+
+  font-semibold
+
+  uppercase
+
+  text-black
+
+  ~w-80/[36rem]
+
+  ~p-3/5
+
+  hover:paused
+
+  md:top-[15vh]
+
+  lg:top-[16vh]
+
+  [&>div]:relative
 
 `

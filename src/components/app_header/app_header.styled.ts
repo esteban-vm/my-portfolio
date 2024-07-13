@@ -1,18 +1,69 @@
 import tw from 'tailwind-styled-components'
 import { clsx } from '@/utils'
 
-interface NavBarProps {
-  $isOpen: boolean
-}
+export const InnerWrapper = tw.div`
 
-const navBarClasses = {
-  default: clsx('top-[-500%] animate-out slide-out-to-top'),
-  open: clsx('top-full animate-in slide-in-from-top'),
-}
+  relative
+
+  flex
+
+  size-full
+
+  items-center
+
+  justify-around
+
+`
+
+export const Logo = tw.a`
+
+  animate-glitch
+
+  text-wrap
+
+  text-center
+
+  font-saiba45
+
+  text-neon-yellow
+
+  ~text-4xl/7xl
+
+  logo-shadow
+
+  hover:animate-none
+
+  [&>span]:hidden
+
+  [&>span]:font-saiba45
+
+  [&>span]:md:inline
+
+`
+
+export const MobileButton = tw.button`
+
+  pointer-events-auto
+
+  flex
+
+  items-center
+
+  justify-center
+
+  text-neon-yellow
+
+  lg:hidden
+
+  [&>svg]:~size-8/10
+
+  active:[&>svg]:scale-90
+
+`
 
 export const NavBar = tw.nav<NavBarProps>`
 
-  ${({ $isOpen }) => ($isOpen ? navBarClasses.open : navBarClasses.default)}
+  ${({ $isOpen }) => ($isOpen ? dynamicClasses.openNavBar : dynamicClasses.defaultNavBar)}
 
   absolute
 
@@ -54,15 +105,9 @@ export const NavBar = tw.nav<NavBarProps>`
 
 `
 
-interface NavLinkProps {
-  $isActive: boolean
-}
-
-const activeLinkClasses = clsx('!text-neon-green-dark after:!bg-neon-green-dark')
-
 export const NavItem = tw.a<NavLinkProps>`
 
-  ${({ $isActive }) => $isActive && activeLinkClasses}
+  ${({ $isActive }) => $isActive && dynamicClasses.activeLink}
 
   relative
 
@@ -110,66 +155,6 @@ export const NavItem = tw.a<NavLinkProps>`
 
 `
 
-export const MobileButton = tw.button`
-
-  pointer-events-auto
-
-  flex
-
-  items-center
-
-  justify-center
-
-  text-neon-yellow
-
-  lg:hidden
-
-  [&>svg]:~size-8/10
-
-  active:[&>svg]:scale-90
-
-`
-
-export const InnerWrapper = tw.div`
-
-  relative
-
-  flex
-
-  size-full
-
-  items-center
-
-  justify-around
-
-`
-
-export const Logo = tw.a`
-
-  animate-glitch
-
-  text-wrap
-
-  text-center
-
-  font-saiba45
-
-  text-neon-yellow
-
-  ~text-4xl/7xl
-
-  logo-shadow
-
-  hover:animate-none
-
-  [&>span]:hidden
-
-  [&>span]:font-saiba45
-
-  [&>span]:md:inline
-
-`
-
 export const Wrapper = tw.header`
 
   container
@@ -197,3 +182,17 @@ export const Wrapper = tw.header`
   [&_a]:pointer-events-auto
 
 `
+
+interface NavBarProps {
+  $isOpen: boolean
+}
+
+interface NavLinkProps {
+  $isActive: boolean
+}
+
+const dynamicClasses = {
+  activeLink: clsx('!text-neon-green-dark after:!bg-neon-green-dark'),
+  defaultNavBar: clsx('top-[-500%] animate-out slide-out-to-top'),
+  openNavBar: clsx('top-full animate-in slide-in-from-top'),
+}
