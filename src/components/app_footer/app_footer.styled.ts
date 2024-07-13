@@ -63,7 +63,7 @@ export const LanguageSwitch = tw.input`
 
   before:~h-8/12
 
-  before:link-shadow
+  before:neon-shadow
 
   after:visible
 
@@ -103,9 +103,27 @@ export const LanguageSwitch = tw.input`
 
 export const MusicButton = tw.button`
 
+  group
+
   pointer-events-auto
 
+  rounded-full
+
+  bg-neon-green-dark
+
+  outline-offset-4
+
+  ~size-8/12
+
+`
+
+export const StyledIcon = tw.span`
+
   flex
+
+  size-full
+
+  -translate-y-1
 
   items-center
 
@@ -113,9 +131,21 @@ export const MusicButton = tw.button`
 
   rounded-full
 
-  bg-orange-500
+  bg-black/80
 
-  ~size-8/12
+  transition-transform
+
+  duration-200
+
+  will-change-transform
+
+  group-hover:-translate-y-2
+
+  group-active:-translate-y-[2px]
+
+  [&>svg]:fill-neon-green-dark
+
+  [&>svg]:stroke-neon-green-dark
 
 `
 

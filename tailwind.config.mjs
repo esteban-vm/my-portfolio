@@ -286,7 +286,7 @@ const tailwindConfig = {
             8px 4px 30px ${theme('colors.neon-green-light')}
           `,
         },
-        '.link-shadow': {
+        '.neon-shadow': {
           'box-shadow': `
             0px 1px 2px 0px ${theme('colors.neon-green-light')},
             1px 2px 4px 0px ${theme('colors.neon-green-light')},
