@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { LuArrowBigRight } from 'react-icons/lu'
 import tw from 'tailwind-styled-components'
 
@@ -10,7 +9,7 @@ export const ArrowIcon = tw(LuArrowBigRight)`
 
 `
 
-export const InfoLink = tw(Link)`
+export const LinkContent = tw.a`
 
   absolute
 

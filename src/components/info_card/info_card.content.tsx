@@ -1,6 +1,7 @@
 import type { Route } from 'next'
 import { useSceneContext } from '@/contexts'
-import { ArrowIcon, InfoLink, LinkText, MainText, Wrapper } from './info_card.styled'
+import { AppLink } from '@/shared'
+import { ArrowIcon, LinkContent, LinkText, MainText, Wrapper } from './info_card.styled'
 
 interface ContentProps {
   href?: Route
@@ -22,11 +23,14 @@ export default function Content({ href, mainText, linkText = 'Learn more…' }: 
     >
       <div>
         <MainText>{mainText}</MainText>
+
         {href && (
-          <InfoLink href={href}>
-            <LinkText>{linkText}</LinkText>
-            <ArrowIcon aria-label={linkText} />
-          </InfoLink>
+          <AppLink href={href}>
+            <LinkContent>
+              <LinkText>{linkText}</LinkText>
+              <ArrowIcon aria-label={linkText} />
+            </LinkContent>
+          </AppLink>
         )}
       </div>
     </Wrapper>
