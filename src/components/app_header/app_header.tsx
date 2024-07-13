@@ -1,33 +1,42 @@
+import { usePathname } from 'next/navigation'
 import { useId, useState } from 'react'
+import { LuMenu, LuX } from 'react-icons/lu'
 import { navLinks } from '@/constants'
-import Logo from './app_header.logo'
-import Wrapper from './app_header.wrapper'
-import NavBar from './nav_bar'
-import Button from './nav_bar.button'
-import Link from './nav_bar.link'
+import { AppLink } from '@/shared'
+import { InnerWrapper, Logo, MobileButton, NavBar, NavItem, Wrapper } from './app_header.styled'
 
 export default function AppHeader() {
   const logoId = useId()
-  const [isOpen, setIsOpen] = useState(false)
+  const currentPathname = usePathname()
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false)
 
-  const toggleNavBar = () => {
-    setIsOpen(!isOpen)
-    navigator.vibrate?.(10)
-  }
-
-  const closeNavBar = () => setIsOpen(false)
+  const toggleNavBar = () => setIsNavBarOpen(!isNavBarOpen)
+  const closeNavBar = () => setIsNavBarOpen(false)
 
   return (
     <Wrapper aria-labelledby={logoId}>
-      <div className='relative flex size-full items-center justify-around'>
-        <Logo id={logoId} onClick={closeNavBar} />
-        <Button isOpen={isOpen} onClick={toggleNavBar} />
-        <NavBar isOpen={isOpen}>
-          {navLinks.map((link) => (
-            <Link key={link.id} onClick={closeNavBar} {...link} />
+      <InnerWrapper>
+        <h1 id={logoId}>
+          <AppLink href='/'>
+            <Logo onClick={closeNavBar}>
+              Esteban
+              <span>&nbsp;V.M.</span>
+            </Logo>
+          </AppLink>
+        </h1>
+
+        <MobileButton type='button' onClick={toggleNavBar}>
+          {isNavBarOpen ? <LuX aria-label='Close Menu' /> : <LuMenu aria-label='Open Menu' />}
+        </MobileButton>
+
+        <NavBar $isOpen={isNavBarOpen}>
+          {navLinks.map(({ href, id, ...rest }) => (
+            <AppLink key={id} href={href}>
+              <NavItem $isActive={currentPathname === href} id={id} onClick={closeNavBar} {...rest} />
+            </AppLink>
           ))}
         </NavBar>
-      </div>
+      </InnerWrapper>
     </Wrapper>
   )
 }

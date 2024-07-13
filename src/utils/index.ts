@@ -4,8 +4,7 @@ import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { models } from '@/constants'
 
-export const getModelPath = <T extends ModelType>(model: T) => <const>`/models/${models[model]}.glb`
+const twClsx = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
+const getModelPath = <T extends ModelType>(model: T) => <const>`/models/${models[model]}.glb`
 
-const customClsx = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
-
-export { customClsx as clsx }
+export { twClsx as clsx, getModelPath }
