@@ -87,15 +87,21 @@ export const LanguageSwitch = tw.input`
 
   before:rounded-full
 
+  before:border
+
+  before:border-neon-green-light
+
   before:bg-transparent
+
+  before:shadow-md
+
+  before:shadow-neon-green-light
 
   before:backdrop-blur-sm
 
   before:content-[""]
 
   before:~h-8/12
-
-  before:neon-shadow
 
   after:visible
 
@@ -115,9 +121,9 @@ export const LanguageSwitch = tw.input`
 
   after:rounded-full
 
-  after:border-2
+  after:border
 
-  after:border-transparent
+  after:border-neon-green-light
 
   after:bg-black/80
 
