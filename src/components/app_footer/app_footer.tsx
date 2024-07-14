@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LuPause, LuPlay } from 'react-icons/lu'
 import { spFlag, ukFlag } from '@/images'
-import { FlagImage, InnerWrapper, LanguageSwitch, MusicButton, StyledIcon, Wrapper } from './app_footer.styled'
+import { FlagImage, IconWrapper, InnerWrapper, LanguageSwitch, MusicButton, Wrapper } from './app_footer.styled'
 
 export default function AppFooter() {
   const [isPlayingMusic, setIsPlayingMusic] = useState(false)
@@ -9,7 +9,7 @@ export default function AppFooter() {
   return (
     <Wrapper>
       <MusicButton type='button' onClick={() => setIsPlayingMusic(!isPlayingMusic)}>
-        <StyledIcon>{isPlayingMusic ? <LuPause aria-label='Pause' /> : <LuPlay aria-label='Play' />}</StyledIcon>
+        <IconWrapper>{isPlayingMusic ? <LuPause aria-label='Pause' /> : <LuPlay aria-label='Play' />}</IconWrapper>
       </MusicButton>
 
       <InnerWrapper>
