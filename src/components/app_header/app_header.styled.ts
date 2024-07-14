@@ -15,29 +15,13 @@ export const InnerWrapper = tw.div`
 
 `
 
-export const Logo = tw.a`
+export const LastName = tw.span`
 
-  animate-glitch
-
-  text-wrap
-
-  text-center
+  hidden
 
   font-saiba45
 
-  text-neon-yellow
-
-  ~text-4xl/7xl
-
-  logo-shadow
-
-  hover:animate-none
-
-  [&>span]:hidden
-
-  [&>span]:font-saiba45
-
-  [&>span]:md:inline
+  md:inline
 
 `
 
@@ -58,6 +42,28 @@ export const MobileButton = tw.button`
   [&>svg]:~size-8/10
 
   active:[&>svg]:scale-90
+
+`
+
+export const NameLogo = tw.a`
+
+  pointer-events-auto
+
+  animate-glitch
+
+  text-wrap
+
+  text-center
+
+  font-saiba45
+
+  text-neon-yellow
+
+  ~text-4xl/7xl
+
+  logo-shadow
+
+  hover:animate-none
 
 `
 
@@ -108,6 +114,8 @@ export const NavBar = tw.nav<NavBarProps>`
 export const NavItem = tw.a<NavItemProps>`
 
   ${({ $isActive }) => $isActive && dynamicClasses.activeLink}
+
+  pointer-events-auto
 
   relative
 
@@ -178,8 +186,6 @@ export const Wrapper = tw.header`
   md:h-[12vh]
 
   lg:h-[13vh]
-
-  [&_a]:pointer-events-auto
 
 `
 

@@ -13,6 +13,38 @@ export const FlagImage = tw(Image)`
 
 `
 
+export const IconWrapper = tw.span`
+
+  flex
+
+  size-full
+
+  -translate-y-1
+
+  items-center
+
+  justify-center
+
+  rounded-full
+
+  bg-black/80
+
+  transition-transform
+
+  duration-200
+
+  will-change-transform
+
+  group-hover:-translate-y-2
+
+  group-active:-translate-y-[2px]
+
+  [&>svg]:fill-neon-green-dark
+
+  [&>svg]:stroke-neon-green-dark
+
+`
+
 export const InnerWrapper = tw.div`
 
   inline
@@ -114,38 +146,6 @@ export const MusicButton = tw.button`
   outline-offset-4
 
   ~size-8/12
-
-`
-
-export const StyledIcon = tw.span`
-
-  flex
-
-  size-full
-
-  -translate-y-1
-
-  items-center
-
-  justify-center
-
-  rounded-full
-
-  bg-black/80
-
-  transition-transform
-
-  duration-200
-
-  will-change-transform
-
-  group-hover:-translate-y-2
-
-  group-active:-translate-y-[2px]
-
-  [&>svg]:fill-neon-green-dark
-
-  [&>svg]:stroke-neon-green-dark
 
 `
 

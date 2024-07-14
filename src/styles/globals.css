@@ -12,7 +12,7 @@
   }
 
   * {
-    @apply font-montserrat selection:bg-neon-green-light selection:text-black motion-reduce:!animate-none;
+    @apply font-montserrat selection:bg-neon-green-light selection:text-black;
   }
 
   a,

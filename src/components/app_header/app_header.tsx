@@ -2,8 +2,8 @@ import { usePathname } from 'next/navigation'
 import { useId, useState } from 'react'
 import { LuMenu, LuX } from 'react-icons/lu'
 import { navLinks } from '@/constants'
-import { AppLink } from '@/shared'
-import { InnerWrapper, Logo, MobileButton, NavBar, NavItem, Wrapper } from './app_header.styled'
+import { StyledLink } from '@/shared'
+import { InnerWrapper, LastName, MobileButton, NameLogo, NavBar, NavItem, Wrapper } from './app_header.styled'
 
 export default function AppHeader() {
   const logoId = useId()
@@ -17,12 +17,12 @@ export default function AppHeader() {
     <Wrapper aria-labelledby={logoId}>
       <InnerWrapper>
         <h1 id={logoId}>
-          <AppLink href='/'>
-            <Logo onClick={closeNavBar}>
+          <StyledLink href='/'>
+            <NameLogo onClick={closeNavBar}>
               Esteban
-              <span>&nbsp;V.M.</span>
-            </Logo>
-          </AppLink>
+              <LastName>&nbsp;V.M.</LastName>
+            </NameLogo>
+          </StyledLink>
         </h1>
 
         <MobileButton type='button' onClick={toggleNavBar}>
@@ -31,9 +31,9 @@ export default function AppHeader() {
 
         <NavBar $isOpen={isNavBarOpen}>
           {navLinks.map(({ href, id, ...rest }) => (
-            <AppLink key={id} href={href}>
+            <StyledLink key={id} href={href}>
               <NavItem $isActive={currentPathname === href} id={id} onClick={closeNavBar} {...rest} />
-            </AppLink>
+            </StyledLink>
           ))}
         </NavBar>
       </InnerWrapper>

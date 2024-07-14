@@ -5,6 +5,8 @@ export const ArrowIcon = tw(LuArrowBigRight)`
 
   inline
 
+  fill-neon-green-darker
+
   ~size-4/5
 
 `
@@ -42,8 +44,6 @@ export const LinkContent = tw.a`
   hover:opacity-95
 
   active:scale-90
-
-  [&>svg]:fill-neon-green-darker
 
 `
 
@@ -100,7 +100,5 @@ export const Wrapper = tw.div`
   md:top-[15vh]
 
   lg:top-[16vh]
-
-  [&>div]:relative
 
 `
