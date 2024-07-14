@@ -19,6 +19,10 @@
     "tw`([^`]*)", // tw`...`
     "tw\\.[^`]+`([^`]*)`", // tw.xxx<xxx>`...`
     "tw\\(.*?\\).*?`([^`]*)", // tw(Component)<xxx>`...`
-    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"] // clsx( ['...'])
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // clsx( ['...'])
+    // https://stackoverflow.com/questions/66614875/how-can-i-enable-tailwind-intellisense-outside-of-classname
+    ["Classes \\=([^;]*)", "'([^']*)'"],
+    ["Classes \\=([^;]*)", "\"([^\"]*)\""],
+    ["Classes \\=([^;]*)", "\\`([^\\`]*)\\`"]
   ]
 }
