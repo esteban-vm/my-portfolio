@@ -1,5 +1,4 @@
 import tw from 'tailwind-styled-components'
-import { clsx } from '@/utils'
 
 export const InnerWrapper = tw.div`
 
@@ -197,8 +196,8 @@ interface NavItemProps {
   $isActive: boolean
 }
 
-const dynamicClasses = {
-  activeLink: clsx('!text-neon-green-dark after:!bg-neon-green-dark'),
-  defaultNavBar: clsx('top-[-500%] animate-out slide-out-to-top'),
-  openNavBar: clsx('top-full animate-in slide-in-from-top'),
+const dynamicClasses = <const>{
+  activeLink: '!text-neon-green-dark after:!bg-neon-green-dark',
+  defaultNavBar: 'top-[-500%] animate-out slide-out-to-top',
+  openNavBar: 'top-full animate-in slide-in-from-top',
 }
