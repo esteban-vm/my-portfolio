@@ -286,14 +286,6 @@ const tailwindConfig = {
             8px 4px 30px ${theme('colors.neon-green-light')}
           `,
         },
-        '.neon-shadow': {
-          'box-shadow': `
-            0px 1px 2px 0px ${theme('colors.neon-green-light')},
-            1px 2px 4px 0px ${theme('colors.neon-green-light')},
-            2px 4px 8px 0px ${theme('colors.neon-green-light')},
-            2px 4px 16px 0px ${theme('colors.neon-green-light')}
-          `,
-        },
         '.nav-height-sm': {
           height: `calc(89vh - ${theme('spacing.4')})`,
         },

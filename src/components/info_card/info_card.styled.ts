@@ -31,6 +31,10 @@ export const LinkContent = tw.a`
 
   text-neon-green-darker
 
+  shadow-md
+
+  shadow-neon-green-light
+
   backdrop-blur-sm
 
   transition-all
@@ -38,8 +42,6 @@ export const LinkContent = tw.a`
   ~px-2/4
 
   ~py-1/3
-
-  neon-shadow
 
   hover:opacity-95
 
