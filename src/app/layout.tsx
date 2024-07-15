@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   authors: { name: 'Esteban V.M.', url: 'https://github.com/esteban-vm' },
 }
 
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang='en'>
+      <body>
+        <main className={clsx('relative h-screen bg-black', balsamiq.variable, montserrat.variable, saiba45.variable)}>
+          <AppHeader />
+          {children}
+          <AppFooter />
+        </main>
+      </body>
+    </html>
+  )
+}
+
 const balsamiq = localFont({
   variable: '--font-balsamiq' satisfies typeof Fonts.balsamiq,
   display: 'swap',
@@ -38,17 +52,3 @@ const saiba45 = localFont({
   fallback: ['cursive'],
   src: '../../public/fonts/SAIBA-45.woff2',
 })
-
-export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html lang='en'>
-      <body>
-        <main className={clsx('relative h-screen bg-black', balsamiq.variable, montserrat.variable, saiba45.variable)}>
-          <AppHeader />
-          {children}
-          <AppFooter />
-        </main>
-      </body>
-    </html>
-  )
-}
