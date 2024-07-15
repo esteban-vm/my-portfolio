@@ -6,16 +6,6 @@ import twAnimate from 'tailwindcss-animate'
 import twTouch from 'tailwindcss-touch'
 import { Fonts } from './src/constants'
 
-/**
- * @template {import("./src/types").NeonColor} T
- * @param {T} color
- **/
-const neonColor = (color) => {
-  const key = /** @type {const} */ (`neon-${color}`)
-  const value = /** @type {const} */ (`oklch(var(--${key}))`)
-  return { [key]: value }
-}
-
 /** @type {import("tailwindcss").Config} */
 const tailwindConfig = {
   content: {
@@ -289,3 +279,13 @@ const tailwindConfig = {
 }
 
 export default tailwindConfig
+
+/**
+ * @template {import("./src/types").NeonColor} T
+ * @param {T} color
+ **/
+function neonColor(color) {
+  const key = /** @type {const} */ (`neon-${color}`)
+  const value = /** @type {const} */ (`oklch(var(--${key}))`)
+  return { [key]: value }
+}
