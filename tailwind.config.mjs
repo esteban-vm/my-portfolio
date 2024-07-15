@@ -4,9 +4,10 @@ import fluid, { extract, fontSize, screens } from 'fluid-tailwind'
 import plugin from 'tailwindcss/plugin'
 import twAnimate from 'tailwindcss-animate'
 import twTouch from 'tailwindcss-touch'
+import { Fonts } from './src/constants'
 
 /**
- * @template {`green-${'light' | 'lighter' | 'dark' | 'darker'}` | 'yellow'} T
+ * @template {import("./src/types").NeonColor} T
  * @param {T} color
  **/
 const neonColor = (color) => {
@@ -29,13 +30,9 @@ const tailwindConfig = {
         '2xs': '0.625rem',
       },
       fontFamily: {
-        saiba45: 'var(--font-saiba45)',
-        montserrat: 'var(--font-montserrat)',
-      },
-      textShadow: {
-        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
-        sm: '0 1px 2px var(--tw-shadow-color)',
-        lg: '0 8px 16px var(--tw-shadow-color)',
+        balsamiq: `var(${Fonts.balsamiq})`,
+        montserrat: `var(${Fonts.montserrat})`,
+        saiba45: `var(${Fonts.saiba45})`,
       },
       keyframes: ({ theme }) => ({
         glitch: {
@@ -259,6 +256,8 @@ const tailwindConfig = {
         /* #0cffed */ ...neonColor('green-light'),
         /* #00e0c0 */ ...neonColor('green-dark'),
         /* #17c47c */ ...neonColor('green-darker'),
+        /* #ff15bc */ ...neonColor('magenta-light'),
+        /* #31202b */ ...neonColor('magenta-dark'),
         /* #d3fc17 */ ...neonColor('yellow'),
       },
     },
@@ -270,15 +269,7 @@ const tailwindConfig = {
     fluid,
     twAnimate,
     twTouch(),
-    plugin(({ matchUtilities, theme, addUtilities }) => {
-      matchUtilities(
-        {
-          'text-shadow': (value) => ({ textShadow: value }),
-        },
-        {
-          values: theme('textShadow'),
-        }
-      )
+    plugin(({ theme, addUtilities }) => {
       addUtilities({
         '.logo-shadow': {
           'text-shadow': `
