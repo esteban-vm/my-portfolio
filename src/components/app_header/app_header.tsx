@@ -1,7 +1,7 @@
 import { usePathname } from 'next/navigation'
 import { useId, useState } from 'react'
 import { LuMenu, LuX } from 'react-icons/lu'
-import { navLinks } from '@/constants'
+import { NavLinks } from '@/constants'
 import { StyledLink } from '@/shared'
 import { InnerWrapper, LastName, MobileButton, NameLogo, NavBar, NavItem, Wrapper } from './app_header.styled'
 
@@ -30,7 +30,7 @@ export default function AppHeader() {
         </MobileButton>
 
         <NavBar $isOpen={isNavBarOpen}>
-          {navLinks.map(({ href, id, ...rest }) => (
+          {NavLinks.map(({ href, id, ...rest }) => (
             <StyledLink key={id} href={href}>
               <NavItem $isActive={currentPathname === href} id={id} onClick={closeNavBar} {...rest} />
             </StyledLink>

@@ -177,6 +177,4 @@ export const Wrapper = tw.footer`
 
   justify-around
 
-  text-white
-
 `
