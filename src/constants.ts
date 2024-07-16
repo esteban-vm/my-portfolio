@@ -1,4 +1,3 @@
-import type { FontType } from '@/types'
 import type { CssVariable } from 'next/dist/compiled/@next/font'
 import type { LinkProps } from 'next/link'
 
@@ -6,7 +5,7 @@ export const Fonts = (<const>{
   balsamiq: '--font-balsamiq',
   montserrat: '--font-montserrat',
   saiba45: '--font-saiba45',
-}) satisfies Record<FontType, CssVariable>
+}) satisfies Record<FontName, CssVariable>
 
 export const Models = <const>{
   car: 'cyberpunk_ghetto_delorean',
