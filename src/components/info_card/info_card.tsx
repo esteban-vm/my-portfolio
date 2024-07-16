@@ -1,4 +1,3 @@
-import type { CurrentStage } from '@/types'
 import { useSceneContext } from '@/contexts'
 import Content from './info_card.content'
 

@@ -1,9 +1,9 @@
 // @ts-check
-
 import fluid, { extract, fontSize, screens } from 'fluid-tailwind'
 import plugin from 'tailwindcss/plugin'
-import twAnimate from 'tailwindcss-animate'
-import twTouch from 'tailwindcss-touch'
+import tailwindAnimate from 'tailwindcss-animate'
+// @ts-ignore
+import tailwindTouch from 'tailwindcss-touch'
 import { Fonts } from './src/constants'
 
 /** @type {import("tailwindcss").Config} */
@@ -257,8 +257,8 @@ const tailwindConfig = {
   },
   plugins: [
     fluid,
-    twAnimate,
-    twTouch(),
+    tailwindAnimate,
+    tailwindTouch(),
     plugin(({ theme, addUtilities }) => {
       addUtilities({
         '.logo-shadow': {
@@ -281,7 +281,7 @@ const tailwindConfig = {
 export default tailwindConfig
 
 /**
- * @template {import("./src/types").NeonColor} T
+ * @template {NeonColor} T
  * @param {T} color
  **/
 function neonColor(color) {
