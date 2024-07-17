@@ -23,6 +23,7 @@ export default function Content({ href, mainText, linkText = 'Learn more…' }: 
     >
       <div className='relative'>
         <Styled.MainText>{mainText}</Styled.MainText>
+
         {href && (
           <StyledLink href={href}>
             <Styled.LinkContent>
