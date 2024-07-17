@@ -1,24 +1,26 @@
 import { useState } from 'react'
 import { LuPause, LuPlay } from 'react-icons/lu'
 import { spFlag, ukFlag } from '@/images'
-import { FlagImage, IconWrapper, InnerWrapper, LanguageSwitch, MusicButton, Wrapper } from './app_footer.styled'
+import * as Styled from './app_footer.styled'
 
 export default function AppFooter() {
   const [isPlayingMusic, setIsPlayingMusic] = useState(false)
 
   return (
-    <Wrapper>
-      <MusicButton type='button' onClick={() => setIsPlayingMusic(!isPlayingMusic)}>
-        <IconWrapper>{isPlayingMusic ? <LuPause aria-label='Pause' /> : <LuPlay aria-label='Play' />}</IconWrapper>
-      </MusicButton>
+    <Styled.Wrapper>
+      <Styled.MusicButton type='button' onClick={() => setIsPlayingMusic(!isPlayingMusic)}>
+        <Styled.IconWrapper>
+          {isPlayingMusic ? <LuPause aria-label='Pause' /> : <LuPlay aria-label='Play' />}
+        </Styled.IconWrapper>
+      </Styled.MusicButton>
 
-      <InnerWrapper>
-        <FlagImage alt='Spain flag' src={spFlag} />
+      <Styled.InnerWrapper>
+        <Styled.FlagImage alt='Spain flag' src={spFlag} />
         &nbsp;
-        <LanguageSwitch type='checkbox' />
+        <Styled.LanguageSwitch type='checkbox' />
         &nbsp;
-        <FlagImage alt='UK flag' src={ukFlag} />
-      </InnerWrapper>
-    </Wrapper>
+        <Styled.FlagImage alt='UK flag' src={ukFlag} />
+      </Styled.InnerWrapper>
+    </Styled.Wrapper>
   )
 }
