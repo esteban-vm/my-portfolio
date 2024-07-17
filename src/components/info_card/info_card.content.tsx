@@ -1,7 +1,7 @@
 import type { Route } from 'next'
 import { useSceneContext } from '@/contexts'
 import { StyledLink } from '@/shared'
-import { ArrowIcon, LinkContent, LinkText, MainText, Wrapper } from './info_card.styled'
+import * as Styled from './info_card.styled'
 
 interface ContentProps {
   href?: Route
@@ -15,23 +15,24 @@ export default function Content({ href, mainText, linkText = 'Learn more…' }: 
   const stopScene = () => setIsAnimated(false)
 
   return (
-    <Wrapper
+    <Styled.Wrapper
       onPointerEnter={stopScene}
       onPointerLeave={rotateScene}
       onPointerOut={rotateScene}
       onPointerOver={stopScene}
     >
       <div className='relative'>
-        <MainText>{mainText}</MainText>
+        <Styled.MainText>{mainText}</Styled.MainText>
+
         {href && (
           <StyledLink href={href}>
-            <LinkContent>
-              <LinkText>{linkText}</LinkText>
-              <ArrowIcon aria-label={linkText} />
-            </LinkContent>
+            <Styled.LinkContent>
+              <Styled.LinkText>{linkText}</Styled.LinkText>
+              <Styled.ArrowIcon aria-label={linkText} />
+            </Styled.LinkContent>
           </StyledLink>
         )}
       </div>
-    </Wrapper>
+    </Styled.Wrapper>
   )
 }
