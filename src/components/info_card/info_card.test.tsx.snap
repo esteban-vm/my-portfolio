@@ -1,0 +1,64 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Content: > should render correctly passing href 1`] = `
+<DocumentFragment>
+  <div
+    class="absolute left-1/2 top-[14vh] z-10 -translate-x-1/2 animate-blink rounded-md bg-neon-green-dark text-center font-semibold uppercase text-black ~w-80/[36rem] ~p-3/5 hover:paused md:top-[15vh] lg:top-[16vh]"
+  >
+    <div
+      class="relative"
+    >
+      <p
+        class="line-clamp-3 text-pretty ~text-xs/base"
+      >
+        Test
+      </p>
+      <a
+        class="absolute left-1/2 top-full w-[90%] -translate-x-1/2 rounded-md bg-black/60 font-bold text-neon-green-darker shadow-md shadow-neon-green-light backdrop-blur-sm transition-all ~px-2/4 ~py-1/3 hover:opacity-95 active:scale-90"
+        href="/"
+      >
+        <span
+          class="align-middle ~text-2xs/sm"
+        >
+          Learn more…
+        </span>
+        <svg
+          aria-label="Learn more…"
+          class="inline fill-neon-green-darker ~size-4/5"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 9h6V5l7 7-7 7v-4H6V9z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Content: > should render correctly without passing href 1`] = `
+<DocumentFragment>
+  <div
+    class="absolute left-1/2 top-[14vh] z-10 -translate-x-1/2 animate-blink rounded-md bg-neon-green-dark text-center font-semibold uppercase text-black ~w-80/[36rem] ~p-3/5 hover:paused md:top-[15vh] lg:top-[16vh]"
+  >
+    <div
+      class="relative"
+    >
+      <p
+        class="line-clamp-3 text-pretty ~text-xs/base"
+      >
+        Test
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
