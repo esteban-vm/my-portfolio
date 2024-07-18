@@ -5,7 +5,7 @@ export const Fonts = (<const>{
   balsamiq: '--font-balsamiq',
   montserrat: '--font-montserrat',
   saiba45: '--font-saiba45',
-}) satisfies Record<FontName, CssVariable>
+}) satisfies Record<AppTypes.FontName, CssVariable>
 
 export const Models = <const>{
   car: 'cyberpunk_ghetto_delorean',

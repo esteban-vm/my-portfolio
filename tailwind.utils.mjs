@@ -19,7 +19,7 @@ export const customs = plugin(({ theme, addUtilities }) => {
 })
 
 /**
- * @template {NeonColor} T
+ * @template {AppTypes.NeonColor} T
  * @param {T} color
  **/
 export const getNeonColor = (color) => {

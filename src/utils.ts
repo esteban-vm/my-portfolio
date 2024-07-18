@@ -5,6 +5,6 @@ import { Models } from '@/constants'
 
 const twClsx = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 
-const getModelPath = <T extends ModelType>(model: T) => <const>`/models/${Models[model]}.glb`
+const getModelPath = <T extends AppTypes.ModelName>(model: T) => <const>`/models/${Models[model]}.glb`
 
 export { twClsx as clsx, getModelPath }
