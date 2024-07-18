@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { createContext, useContext, useState } from 'react'
-import { useMediaQuery } from 'react-device-sizes'
+import { useMediaQuery } from 'react-responsive'
 
 interface ISceneContext {
   isMobile: boolean
