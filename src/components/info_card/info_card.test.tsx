@@ -1,12 +1,12 @@
 import { SceneContextProvider } from '@/contexts'
 import { render } from '@/tests'
-import Content from './info_card.content'
+import InfoCardContent from './info_card.content'
 
-describe(`${Content.name}:`, () => {
+describe(`${InfoCardContent.name}:`, () => {
   it('should render correctly without passing href', () => {
     const { asFragment } = render(
       <SceneContextProvider>
-        <Content mainText='Test' />
+        <InfoCardContent mainText='Test' />
       </SceneContextProvider>
     )
 
@@ -16,7 +16,7 @@ describe(`${Content.name}:`, () => {
   it('should render correctly passing href', () => {
     const { asFragment } = render(
       <SceneContextProvider>
-        <Content href='/' mainText='Test' />
+        <InfoCardContent href='/' mainText='Test' />
       </SceneContextProvider>
     )
 

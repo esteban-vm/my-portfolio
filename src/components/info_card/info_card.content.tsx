@@ -3,13 +3,13 @@ import { useSceneContext } from '@/contexts'
 import { StyledLink } from '@/shared'
 import * as Styled from './info_card.styled'
 
-interface ContentProps {
+interface InfoCardContentProps {
   href?: Route
   mainText: string
   linkText?: string
 }
 
-export default function Content({ href, mainText, linkText = 'Learn more…' }: ContentProps) {
+export default function InfoCardContent({ href, mainText, linkText = 'Learn more…' }: InfoCardContentProps) {
   const { setIsAnimated } = useSceneContext()
   const rotateScene = () => setIsAnimated(true)
   const stopScene = () => setIsAnimated(false)
