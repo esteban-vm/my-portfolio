@@ -148,7 +148,7 @@ export const NavItem = tw.a<NavItemProps>`
 
   after:ease-out
 
-  after:content-[""]
+  after:content-['']
 
   hover:opacity-90
 

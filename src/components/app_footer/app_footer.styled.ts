@@ -99,7 +99,7 @@ export const LanguageSwitch = tw.input`
 
   before:backdrop-blur-sm
 
-  before:content-[""]
+  before:content-['']
 
   before:~h-8/12
 
@@ -127,7 +127,7 @@ export const LanguageSwitch = tw.input`
 
   after:bg-black/80
 
-  after:content-["ES"]
+  after:content-['ES']
 
   after:~size-8/12
 
@@ -135,7 +135,7 @@ export const LanguageSwitch = tw.input`
 
   checked:after:right-0
 
-  checked:after:content-["EN"]
+  checked:after:content-['EN']
 
 `
 
