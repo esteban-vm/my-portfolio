@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`InfoCardContent: > should not render any links without passing href 1`] = `
+exports[`InfoCard: > should not render any links without passing href 1`] = `
 <DocumentFragment>
   <div
     class="absolute left-1/2 top-[14vh] z-10 -translate-x-1/2 animate-blink rounded-md bg-neon-green-dark text-center font-semibold uppercase text-black ~w-80/[36rem] ~p-3/5 hover:paused md:top-[15vh] lg:top-[16vh]"
@@ -18,7 +18,7 @@ exports[`InfoCardContent: > should not render any links without passing href 1`]
 </DocumentFragment>
 `;
 
-exports[`InfoCardContent: > should render a link by passing href 1`] = `
+exports[`InfoCard: > should render a link by passing href 1`] = `
 <DocumentFragment>
   <div
     class="absolute left-1/2 top-[14vh] z-10 -translate-x-1/2 animate-blink rounded-md bg-neon-green-dark text-center font-semibold uppercase text-black ~w-80/[36rem] ~p-3/5 hover:paused md:top-[15vh] lg:top-[16vh]"
