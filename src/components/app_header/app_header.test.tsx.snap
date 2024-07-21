@@ -64,21 +64,21 @@ exports[`AppHeader: > should render correctly 1`] = `
         class="top-[-500%] animate-out slide-out-to-top absolute flex w-[95%] flex-col items-center justify-around text-nowrap bg-black/70 text-center duration-700 fill-mode-forwards nav-height-sm md:nav-height-md lg:static lg:size-auto lg:animate-none lg:flex-row lg:gap-8 lg:bg-transparent"
       >
         <a
-          class="pointer-events-auto relative inline-block font-bold uppercase text-neon-yellow ~text-sm/base after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-yellow after:transition-transform after:duration-200 after:ease-out after:content-[""] hover:opacity-90 hover:after:origin-bottom-left hover:after:scale-x-100 active:scale-95 lg:after:absolute"
+          class="pointer-events-auto relative inline-block font-bold uppercase text-neon-yellow ~text-sm/base after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-yellow after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:opacity-90 hover:after:origin-bottom-left hover:after:scale-x-100 active:scale-95 lg:after:absolute"
           href="/about"
           id="9d1222e7-ad5f-4506-b583-2ea9cfe989d8"
         >
           About Me
         </a>
         <a
-          class="pointer-events-auto relative inline-block font-bold uppercase text-neon-yellow ~text-sm/base after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-yellow after:transition-transform after:duration-200 after:ease-out after:content-[""] hover:opacity-90 hover:after:origin-bottom-left hover:after:scale-x-100 active:scale-95 lg:after:absolute"
+          class="pointer-events-auto relative inline-block font-bold uppercase text-neon-yellow ~text-sm/base after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-yellow after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:opacity-90 hover:after:origin-bottom-left hover:after:scale-x-100 active:scale-95 lg:after:absolute"
           href="/projects"
           id="6b3e6de5-f39b-4b15-b744-9c12d7710dd8"
         >
           My Projects
         </a>
         <a
-          class="pointer-events-auto relative inline-block font-bold uppercase text-neon-yellow ~text-sm/base after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-yellow after:transition-transform after:duration-200 after:ease-out after:content-[""] hover:opacity-90 hover:after:origin-bottom-left hover:after:scale-x-100 active:scale-95 lg:after:absolute"
+          class="pointer-events-auto relative inline-block font-bold uppercase text-neon-yellow ~text-sm/base after:bottom-0 after:left-0 after:h-1 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neon-yellow after:transition-transform after:duration-200 after:ease-out after:content-[''] hover:opacity-90 hover:after:origin-bottom-left hover:after:scale-x-100 active:scale-95 lg:after:absolute"
           href="/contact"
           id="c2a12051-a97a-4e0b-ae14-4e63098a3bb2"
         >
