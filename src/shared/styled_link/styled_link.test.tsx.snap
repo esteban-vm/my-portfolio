@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StyledLink: > should render correctly 1`] = `
+<DocumentFragment>
+  <a
+    href="/"
+  >
+    Test
+  </a>
+</DocumentFragment>
+`;
