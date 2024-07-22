@@ -1,4 +1,4 @@
-import { screen, within, renderWithScene } from '@/tests'
+import { screen, within, withSceneProvider } from '@/tests'
 import InfoCard from './info_card'
 
 describe(`${InfoCard.name}:`, () => {
@@ -6,7 +6,7 @@ describe(`${InfoCard.name}:`, () => {
   const mainText = 'Test'
 
   it('should not render any links without passing href', () => {
-    void ({ asFragment } = renderWithScene(<InfoCard mainText={mainText} />))
+    void ({ asFragment } = withSceneProvider(<InfoCard mainText={mainText} />))
     const mainTextElem = screen.getByRole('paragraph')
     expect(asFragment()).toMatchSnapshot()
     expect(mainTextElem).toBeInTheDocument()
@@ -15,7 +15,7 @@ describe(`${InfoCard.name}:`, () => {
   })
 
   it('should render a link by passing href', () => {
-    void ({ asFragment } = renderWithScene(<InfoCard href='/' mainText={mainText} />))
+    void ({ asFragment } = withSceneProvider(<InfoCard href='/' mainText={mainText} />))
     const linkElem = screen.getByRole('link')
     const linkText = 'Learn more…'
     expect(asFragment()).toMatchSnapshot()
