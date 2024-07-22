@@ -1,5 +1,4 @@
 import '@/globals.css'
-import type { Fonts } from '@/constants'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import localFont from 'next/font/local'
@@ -26,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 }
 
 const balsamiq = localFont({
-  variable: '--font-balsamiq' satisfies typeof Fonts.balsamiq,
+  variable: '--font-balsamiq' satisfies AppTypes.FontVariables['balsamiq'],
   display: 'swap',
   fallback: ['sans-serif'],
   src: [
@@ -37,7 +36,7 @@ const balsamiq = localFont({
 })
 
 const montserrat = localFont({
-  variable: '--font-montserrat' satisfies typeof Fonts.montserrat,
+  variable: '--font-montserrat' satisfies AppTypes.FontVariables['montserrat'],
   display: 'swap',
   fallback: ['sans-serif'],
   src: [
@@ -47,7 +46,7 @@ const montserrat = localFont({
 })
 
 const saiba45 = localFont({
-  variable: '--font-saiba45' satisfies typeof Fonts.saiba45,
+  variable: '--font-saiba45' satisfies AppTypes.FontVariables['saiba45'],
   display: 'swap',
   fallback: ['cursive'],
   src: '../../public/fonts/SAIBA-45.woff2',
