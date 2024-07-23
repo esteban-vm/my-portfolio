@@ -4,21 +4,6 @@ import { Suspense, lazy } from 'react'
 import { useSceneContext } from '@/contexts'
 import { LoadingSpinner } from '@/shared'
 
-const CyberpunkCity = lazy(() => import('@/cyberpunk_city'))
-const CyberpunkGhettoDeLorean = lazy(() => import('@/cyberpunk_ghetto_delorean'))
-
-function Loader() {
-  const { progress } = useProgress()
-  const percent = (progress / 100).toLocaleString(undefined, { style: 'percent' })
-
-  return (
-    <Html className='text-center' center>
-      <span className='font-bold text-neon-green-light'>{percent}</span>
-      <LoadingSpinner className='-left-1/2' />
-    </Html>
-  )
-}
-
 export default function HomeScene() {
   const { isMobile, isAnimated } = useSceneContext()
 
@@ -45,5 +30,27 @@ export default function HomeScene() {
         />
       </Suspense>
     </Canvas>
+  )
+}
+
+const CyberpunkCity = lazy(async () => {
+  const models = await import('@/models')
+  return { default: models.CyberpunkCity }
+})
+
+const CyberpunkGhettoDeLorean = lazy(async () => {
+  const models = await import('@/models')
+  return { default: models.CyberpunkGhettoDeLorean }
+})
+
+function Loader() {
+  const { progress } = useProgress()
+  const percent = (progress / 100).toLocaleString(undefined, { style: 'percent' })
+
+  return (
+    <Html className='text-center' center>
+      <span className='font-bold text-neon-green-light'>{percent}</span>
+      <LoadingSpinner className='-left-1/2' />
+    </Html>
   )
 }
