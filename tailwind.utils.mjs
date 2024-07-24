@@ -1,4 +1,3 @@
-// @ts-check
 import plugin from 'tailwindcss/plugin'
 
 export const customs = plugin(({ theme, addUtilities }) => {

@@ -1,4 +1,3 @@
-// @ts-check
 import tailwindFluid, { extract, fontSize, screens } from 'fluid-tailwind'
 import tailwindAnimate from 'tailwindcss-animate'
 // @ts-ignore
