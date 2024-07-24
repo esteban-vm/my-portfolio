@@ -40,8 +40,8 @@ exports[`AppFooter: > should render correctly 1`] = `
         decoding="async"
         height="1"
         loading="lazy"
-        src="/_next/image?url=%2Fpublic%2Fimages%2Fspain.png&w=16&q=75"
-        srcset="/_next/image?url=%2Fpublic%2Fimages%2Fspain.png&w=16&q=75 1x"
+        src="/_next/image?url=%2Fpublic%2Fimages%2FSpain.png&w=16&q=75"
+        srcset="/_next/image?url=%2Fpublic%2Fimages%2FSpain.png&w=16&q=75 1x"
         style="color: transparent;"
         width="1"
       />
@@ -58,8 +58,8 @@ exports[`AppFooter: > should render correctly 1`] = `
         decoding="async"
         height="1"
         loading="lazy"
-        src="/_next/image?url=%2Fpublic%2Fimages%2Fuk.png&w=16&q=75"
-        srcset="/_next/image?url=%2Fpublic%2Fimages%2Fuk.png&w=16&q=75 1x"
+        src="/_next/image?url=%2Fpublic%2Fimages%2FUK.png&w=16&q=75"
+        srcset="/_next/image?url=%2Fpublic%2Fimages%2FUK.png&w=16&q=75 1x"
         style="color: transparent;"
         width="1"
       />

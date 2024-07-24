@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LuPause, LuPlay } from 'react-icons/lu'
-import Spain from '@/images/Spain_flag.png'
-import UK from '@/images/UK_flag.png'
+import Spain from '@/images/Spain.png'
+import UK from '@/images/UK.png'
 import * as Styled from './app_footer.styled'
 
 export default function AppFooter() {
