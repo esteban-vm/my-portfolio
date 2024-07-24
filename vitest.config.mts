@@ -14,7 +14,7 @@ export default defineConfig({
     reporters: 'verbose',
     silent: true,
     resolveSnapshotPath(path, extension) {
-      return path.replace(/\.(test)\.([tj]sx?)/, `.$1.${extension}`)
+      return path.replace(/\.(test)\.([tj]sx?)/, `.$1${extension}`)
     },
   },
 })
