@@ -1,8 +1,6 @@
 import type { CssVariable } from 'next/dist/compiled/@next/font'
 import type { LinkProps } from 'next/link'
 
-type FontName = 'balsamiq' | 'montserrat' | 'saiba45'
-
 export const Fonts = (<const>{
   balsamiq: '--font-balsamiq',
   montserrat: '--font-montserrat',
@@ -15,8 +13,14 @@ export const Models = <const>{
   robot: 'cute_home_robot',
 }
 
-export const NavLinks: Readonly<LinkProps<string>[]> = [
-  { href: '/about', id: '9d1222e7-ad5f-4506-b583-2ea9cfe989d8', children: 'About Me' },
-  { href: '/projects', id: '6b3e6de5-f39b-4b15-b744-9c12d7710dd8', children: 'My Projects' },
-  { href: '/contact', id: 'c2a12051-a97a-4e0b-ae14-4e63098a3bb2', children: 'Contact Me' },
+export const NavLinks: readonly NavLink[] = [
+  { href: '/about', id: '9d1222e7-ad5f-4506-b583-2ea9cfe989d8', text: 'About Me' },
+  { href: '/projects', id: '6b3e6de5-f39b-4b15-b744-9c12d7710dd8', text: 'My Projects' },
+  { href: '/contact', id: 'c2a12051-a97a-4e0b-ae14-4e63098a3bb2', text: 'Contact Me' },
 ]
+
+type FontName = 'balsamiq' | 'montserrat' | 'saiba45'
+
+interface NavLink extends LinkProps<string> {
+  text: string
+}

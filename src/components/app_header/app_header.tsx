@@ -30,9 +30,11 @@ export default function AppHeader() {
         </Styled.MobileButton>
 
         <Styled.NavBar $isOpen={isNavBarOpen}>
-          {NavLinks.map(({ href, id, ...rest }) => (
+          {NavLinks.map(({ href, id, text, ...rest }) => (
             <StyledLink key={id} href={href}>
-              <Styled.NavItem $isActive={currentPathname === href} id={id} onClick={closeNavBar} {...rest} />
+              <Styled.NavItem $isActive={currentPathname === href} id={id} onClick={closeNavBar} {...rest}>
+                {text}
+              </Styled.NavItem>
             </StyledLink>
           ))}
         </Styled.NavBar>
