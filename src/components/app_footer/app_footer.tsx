@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LuPause, LuPlay } from 'react-icons/lu'
 import Spain from '@/images/Spain.png'
-import UK from '@/images/UK.png'
+import UnitedKingdom from '@/images/UnitedKingdom.png'
 import * as Styled from './app_footer.styled'
 
 export default function AppFooter() {
@@ -16,11 +16,11 @@ export default function AppFooter() {
       </Styled.MusicButton>
 
       <Styled.InnerWrapper>
-        <Styled.FlagImage alt='Spain flag' src={Spain} />
+        <Styled.FlagImage alt='Spain' src={Spain} />
         &nbsp;
         <Styled.LanguageSwitch type='checkbox' />
         &nbsp;
-        <Styled.FlagImage alt='UK flag' src={UK} />
+        <Styled.FlagImage alt='United Kingdom' src={UnitedKingdom} />
       </Styled.InnerWrapper>
     </Styled.Wrapper>
   )
