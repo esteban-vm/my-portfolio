@@ -34,7 +34,7 @@ exports[`AppFooter: > should render correctly 1`] = `
       class="inline select-none text-center"
     >
       <img
-        alt="Spain flag"
+        alt="Spain"
         class="inline w-auto contrast-125 ~h-8/12"
         data-nimg="1"
         decoding="async"
@@ -52,14 +52,14 @@ exports[`AppFooter: > should render correctly 1`] = `
       />
        
       <img
-        alt="UK flag"
+        alt="United Kingdom"
         class="inline w-auto contrast-125 ~h-8/12"
         data-nimg="1"
         decoding="async"
         height="1"
         loading="lazy"
-        src="/_next/image?url=%2Fpublic%2Fimages%2FUK.png&w=16&q=75"
-        srcset="/_next/image?url=%2Fpublic%2Fimages%2FUK.png&w=16&q=75 1x"
+        src="/_next/image?url=%2Fpublic%2Fimages%2FUnitedKingdom.png&w=16&q=75"
+        srcset="/_next/image?url=%2Fpublic%2Fimages%2FUnitedKingdom.png&w=16&q=75 1x"
         style="color: transparent;"
         width="1"
       />
