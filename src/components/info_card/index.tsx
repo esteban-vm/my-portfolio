@@ -1,7 +1,8 @@
+import type { SceneStage } from '@/types'
 import { useSceneContext } from '@/contexts'
 import InfoCard from './info_card'
 
-type InfoCardContent = Record<NonNullable<AppTypes.CurrentStage>, ReturnType<typeof InfoCard>>
+type InfoCardContent = Record<NonNullable<SceneStage>, ReturnType<typeof InfoCard>>
 
 const content: InfoCardContent = {
   1: (
