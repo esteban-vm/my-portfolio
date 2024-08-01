@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 }
 
 const balsamiq = localFont({
-  variable: '--font-balsamiq' satisfies AppTypes.FontVariables['balsamiq'],
+  variable: '--font-balsamiq' satisfies AppTypes.FontName['balsamiq'],
   display: 'swap',
   fallback: ['sans-serif'],
   src: [
@@ -36,7 +36,7 @@ const balsamiq = localFont({
 })
 
 const montserrat = localFont({
-  variable: '--font-montserrat' satisfies AppTypes.FontVariables['montserrat'],
+  variable: '--font-montserrat' satisfies AppTypes.FontName['montserrat'],
   display: 'swap',
   fallback: ['sans-serif'],
   src: [
@@ -46,7 +46,7 @@ const montserrat = localFont({
 })
 
 const saiba45 = localFont({
-  variable: '--font-saiba45' satisfies AppTypes.FontVariables['saiba45'],
+  variable: '--font-saiba45' satisfies AppTypes.FontName['saiba45'],
   display: 'swap',
   fallback: ['cursive'],
   src: '../../public/fonts/SAIBA-45.woff2',
