@@ -39,7 +39,7 @@ interface GLTFAction extends THREE.AnimationClip {
 
 const path = getModelPath('robot')
 
-export default function CuteHomeRobot(props: JSX.IntrinsicElements['group']) {
+export default function RobotModel(props: JSX.IntrinsicElements['group']) {
   const modelRef = useRef<THREE.Group>(null!)
   const { nodes, materials, animations } = useGLTF(path) as GLTFResult
   const { actions } = useAnimations(animations, modelRef)

@@ -4,18 +4,17 @@ import { Suspense, lazy } from 'react'
 import { useSceneContext } from '@/contexts'
 import { LoadingSpinner } from '@/shared'
 
+const CarModel = lazy(() => import('@/models').then((mod) => ({ default: mod.CarModel })))
+const CityModel = lazy(() => import('@/models').then((mod) => ({ default: mod.CityModel })))
+
 export default function HomeScene() {
   const { isMobile, isAnimated } = useSceneContext()
 
   return (
     <Canvas className='cursor-grab active:cursor-grabbing'>
       <Suspense fallback={<Loader />}>
-        <CyberpunkCity
-          position={[-2, isMobile ? -2.5 : -2, 2]}
-          rotation={[0, Math.PI / 2, 0]}
-          scale={isMobile ? 1 : 1.2}
-        />
-        <CyberpunkGhettoDeLorean rotation={[0, Math.PI / 2, 0.2]} scale={isMobile ? 0.15 : 0.2} />
+        <CityModel position={[-2, isMobile ? -2.5 : -2, 2]} rotation={[0, Math.PI / 2, 0]} scale={isMobile ? 1 : 1.2} />
+        <CarModel rotation={[0, Math.PI / 2, 0.2]} scale={isMobile ? 0.15 : 0.2} />
         <directionalLight intensity={10} position={[0, 1, 0]} />
         <Environment preset='night' />
         <PerspectiveCamera position={[0, 0, 10]} makeDefault />
@@ -32,16 +31,6 @@ export default function HomeScene() {
     </Canvas>
   )
 }
-
-const CyberpunkCity = lazy(async () => {
-  const models = await import('@/models')
-  return { default: models.CyberpunkCity }
-})
-
-const CyberpunkGhettoDeLorean = lazy(async () => {
-  const models = await import('@/models')
-  return { default: models.CyberpunkGhettoDeLorean }
-})
 
 function Loader() {
   const { progress } = useProgress()
