@@ -26,7 +26,7 @@ interface GLTFResult extends GLTF {
 
 const path = getModelPath('car')
 
-export default function CyberpunkGhettoDeLorean(props: JSX.IntrinsicElements['group']) {
+export default function CarModel(props: JSX.IntrinsicElements['group']) {
   const modelRef = useRef<THREE.Group>(null!)
   const { nodes, materials } = useGLTF(path) as GLTFResult
 

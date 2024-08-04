@@ -30,7 +30,7 @@ interface GLTFResult extends GLTF {
 
 const path = getModelPath('city')
 
-export default function CyberpunkCity(props: JSX.IntrinsicElements['group']) {
+export default function CityModel(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(path) as GLTFResult
   const { setCurrentStage } = useSceneContext()
 

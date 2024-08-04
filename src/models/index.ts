@@ -1,3 +1,3 @@
-export { default as CuteHomeRobot } from './cute_home_robot'
-export { default as CyberpunkCity } from './cyberpunk_city'
-export { default as CyberpunkGhettoDeLorean } from './cyberpunk_ghetto_delorean'
+export { default as CarModel } from './car.model'
+export { default as CityModel } from './city.model'
+export { default as RobotModel } from './robot.model'

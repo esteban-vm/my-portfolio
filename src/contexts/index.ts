@@ -1,3 +1,3 @@
 'use client'
 
-export * from './scene_context'
+export * from './scene.context'
