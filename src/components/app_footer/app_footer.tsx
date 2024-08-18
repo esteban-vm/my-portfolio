@@ -9,10 +9,12 @@ export default function AppFooter() {
 
   return (
     <Styled.Wrapper>
-      <Styled.MusicButton type='button' onClick={() => setIsPlayingMusic(!isPlayingMusic)}>
-        <Styled.IconWrapper>
-          {isPlayingMusic ? <LuPause aria-label='Pause' /> : <LuPlay aria-label='Play' />}
-        </Styled.IconWrapper>
+      <Styled.MusicButton
+        title={isPlayingMusic ? 'Pause' : 'Play'}
+        type='button'
+        onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+      >
+        {isPlayingMusic ? <LuPause aria-label='Pause' /> : <LuPlay aria-label='Play' />}
       </Styled.MusicButton>
 
       <Styled.InnerWrapper>

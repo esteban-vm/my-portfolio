@@ -13,38 +13,6 @@ export const FlagImage = tw(Image)`
 
 `
 
-export const IconWrapper = tw.span`
-
-  flex
-
-  size-full
-
-  -translate-y-1
-
-  items-center
-
-  justify-center
-
-  rounded-full
-
-  bg-black/80
-
-  transition-transform
-
-  duration-200
-
-  will-change-transform
-
-  group-hover:-translate-y-2
-
-  group-active:-translate-y-[2px]
-
-  [&>svg]:fill-neon-green-dark
-
-  [&>svg]:stroke-neon-green-dark
-
-`
-
 export const InnerWrapper = tw.div`
 
   inline
@@ -69,11 +37,11 @@ export const LanguageSwitch = tw.input`
 
   font-bold
 
-  text-neon-green-dark
+  text-neon-green-darker
 
   outline-none
 
-  ~w-16/24
+  ~w-20/24
 
   before:visible
 
@@ -101,7 +69,7 @@ export const LanguageSwitch = tw.input`
 
   before:content-['']
 
-  before:~h-8/12
+  before:~h-10/12
 
   after:visible
 
@@ -129,7 +97,7 @@ export const LanguageSwitch = tw.input`
 
   after:content-['ES']
 
-  after:~size-8/12
+  after:~size-10/12
 
   default:after:left-0
 
@@ -141,17 +109,41 @@ export const LanguageSwitch = tw.input`
 
 export const MusicButton = tw.button`
 
-  group
-
   pointer-events-auto
 
-  rounded-full
+  flex
 
-  bg-neon-green-dark
+  items-center
 
-  outline-offset-4
+  justify-center
 
-  ~size-8/12
+  rounded-md
+
+  border
+
+  border-neon-green-light
+
+  bg-black/80
+
+  text-neon-green-darker
+
+  shadow-md
+
+  shadow-neon-green-light
+
+  backdrop-blur-sm
+
+  transition-all
+
+  ~size-10/12
+
+  active:scale-95
+
+  [&>svg]:size-1/2
+
+  [&>svg]:fill-neon-green-darker
+
+  [&>svg]:stroke-neon-green-darker
 
 `
 
