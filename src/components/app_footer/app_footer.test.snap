@@ -6,12 +6,12 @@ exports[`AppFooter: > should render correctly 1`] = `
     class="container pointer-events-none absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center justify-around"
   >
     <button
-      class="pointer-events-auto flex items-center justify-center rounded-md border border-neon-green-light bg-black/80 text-neon-green-darker shadow-md shadow-neon-green-light backdrop-blur-sm transition-all ~size-10/12 active:scale-95 [&>svg]:size-1/2 [&>svg]:fill-neon-green-darker [&>svg]:stroke-neon-green-darker"
-      title="Play"
+      class="pointer-events-auto flex items-center justify-center rounded-md border border-neon-green-light bg-black/80 text-neon-green-darker shadow-md shadow-neon-green-light backdrop-blur-sm transition-all ~size-10/12 active:scale-95 [&>svg]:size-1/2"
+      title="Music on"
       type="button"
     >
       <svg
-        aria-label="Play"
+        aria-label="Music on"
         fill="none"
         height="1em"
         stroke="currentColor"
@@ -22,8 +22,17 @@ exports[`AppFooter: > should render correctly 1`] = `
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <polygon
-          points="5 3 19 12 5 21 5 3"
+        <path
+          d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"
+        />
+        <path
+          d="M13 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"
+        />
+        <path
+          d="M9 17v-13h10v13"
+        />
+        <path
+          d="M9 8h10"
         />
       </svg>
     </button>
