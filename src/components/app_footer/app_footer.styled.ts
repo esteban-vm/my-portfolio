@@ -141,10 +141,6 @@ export const MusicButton = tw.button`
 
   [&>svg]:size-1/2
 
-  [&>svg]:fill-neon-green-darker
-
-  [&>svg]:stroke-neon-green-darker
-
 `
 
 export const Wrapper = tw.footer`
