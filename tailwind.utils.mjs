@@ -227,19 +227,19 @@ export const keyframes = ({ theme }) => {
       '0%, 100%': {
         'background-color': theme('colors.neon-green-darker'),
         'box-shadow': `
-          0 0 5px ${theme('colors.neon-green-darker')},
-          0 0 10px ${theme('colors.neon-green-darker')},
-          0 0 15px ${theme('colors.neon-green-darker')},
-          0 0 20px ${theme('colors.neon-green-darker')}
+          0 0 4px ${theme('colors.neon-green-darker')},
+          0 0 8px ${theme('colors.neon-green-darker')},
+          0 0 12px ${theme('colors.neon-green-darker')},
+          0 0 16px ${theme('colors.neon-green-darker')}
         `,
       },
       '50%': {
         'background-color': theme('colors.neon-green-lighter'),
         'box-shadow': `
-          0 0 5px ${theme('colors.neon-green-lighter')},
-          0 0 10px ${theme('colors.neon-green-lighter')},
-          0 0 15px ${theme('colors.neon-green-lighter')},
-          0 0 20px ${theme('colors.neon-green-lighter')}
+          0 0 4px ${theme('colors.neon-green-lighter')},
+          0 0 8px ${theme('colors.neon-green-lighter')},
+          0 0 12px ${theme('colors.neon-green-lighter')},
+          0 0 16px ${theme('colors.neon-green-lighter')}
         `,
       },
     },
