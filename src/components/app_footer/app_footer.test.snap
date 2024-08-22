@@ -70,6 +70,21 @@ exports[`AppFooter: > should render correctly 1`] = `
         width="1"
       />
     </div>
+    <audio
+      loop=""
+    >
+      <track
+        kind="captions"
+      />
+      <source
+        src="/audios/cosmic-love.mp3"
+        type="audio/mpeg"
+      />
+      <code>
+        audio
+      </code>
+       not supported
+    </audio>
   </footer>
 </DocumentFragment>
 `;
