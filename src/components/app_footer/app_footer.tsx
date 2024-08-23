@@ -1,21 +1,33 @@
 import { useEffect, useRef, useState } from 'react'
 import { TbMusic, TbMusicOff } from 'react-icons/tb'
-import Spain from '@/images/Spain.png'
-import UnitedKingdom from '@/images/UnitedKingdom.png'
+import { Spain, UK } from '@/svgs'
 import * as Styled from './app_footer.styled'
 
 export default function AppFooter() {
   const audioRef = useRef<HTMLAudioElement>(null!)
   const [musicOn, setMusicOn] = useState(false)
+  const [language, setLanguage] = useState<'English' | 'Spanish'>('Spanish')
 
   const musicOnLbl = 'Music on'
   const musicOffLbl = 'Music off'
 
+  const toggleMusic = () => setMusicOn(!musicOn)
+  const toggleLang = () => setLanguage(language === 'English' ? 'Spanish' : 'English')
+
   useEffect(() => {
+    /*
+      Music from #Uppbeat (free for Creators!):
+      https://uppbeat.io/t/aavirall/cosmic-love
+    */
+    audioRef.current = new Audio('/audios/cosmic-love.mp3')
+    audioRef.current.loop = true
     audioRef.current.volume = 0.2
+    audioRef.current.preload = 'auto'
   }, [])
 
   useEffect(() => {
+    audioRef.current.load()
+
     if (musicOn) {
       audioRef.current.play()
     } else {
@@ -25,27 +37,13 @@ export default function AppFooter() {
 
   return (
     <Styled.Wrapper>
-      <Styled.MusicButton title={musicOn ? musicOffLbl : musicOnLbl} type='button' onClick={() => setMusicOn(!musicOn)}>
+      <Styled.Button title={musicOn ? musicOffLbl : musicOnLbl} type='button' onClick={toggleMusic}>
         {musicOn ? <TbMusicOff aria-label={musicOffLbl} /> : <TbMusic aria-label={musicOnLbl} />}
-      </Styled.MusicButton>
+      </Styled.Button>
 
-      <Styled.InnerWrapper>
-        <Styled.FlagImage alt='Spain' src={Spain} />
-        &nbsp;
-        <Styled.LanguageSwitch type='checkbox' />
-        &nbsp;
-        <Styled.FlagImage alt='United Kingdom' src={UnitedKingdom} />
-      </Styled.InnerWrapper>
-
-      <audio ref={audioRef} loop>
-        <track kind='captions' />
-        {/* 
-          Music from #Uppbeat (free for Creators!):
-          https://uppbeat.io/t/aavirall/cosmic-love
-        */}
-        <source src='/audios/cosmic-love.mp3' type='audio/mpeg' />
-        <code>audio</code> not supported
-      </audio>
+      <Styled.Button title={`Switch to ${language}`} type='button' onClick={toggleLang}>
+        {language === 'English' ? <UK aria-label='UK flag' /> : <Spain aria-label='Spain Flag' />}
+      </Styled.Button>
     </Styled.Wrapper>
   )
 }
