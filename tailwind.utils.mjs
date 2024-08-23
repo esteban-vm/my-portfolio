@@ -1,29 +1,12 @@
 import plugin from 'tailwindcss/plugin'
 
-export const customs = plugin(({ theme, addUtilities }) => {
-  addUtilities({
-    '.logo-shadow': {
-      'text-shadow': `
-        4px 2px 0px ${theme('colors.neon-green-dark')},
-        8px 4px 30px ${theme('colors.neon-green-light')}
-      `,
-    },
-    '.nav-height-sm': {
-      height: `calc(89vh - ${theme('spacing.4')})`,
-    },
-    '.nav-height-md': {
-      height: `calc(88vh - ${theme('spacing.4')})`,
-    },
-  })
-})
-
 /**
  * @template {AppTypes.NeonColor} T
  * @param {T} color
  **/
 export const getNeonColor = (color) => {
-  const key = /** @type {const} */ `neon-${color}`
-  const value = /** @type {const} */ `oklch(var(--${key}))`
+  const key = `neon-${color}`
+  const value = `oklch(var(--${key}))`
   return { [key]: value }
 }
 
@@ -245,3 +228,27 @@ export const keyframes = ({ theme }) => {
     },
   }
 }
+
+export const utilities = plugin(({ theme, addUtilities, matchUtilities }) => {
+  addUtilities({
+    '.logo-shadow': {
+      'text-shadow': `
+        4px 2px 0px ${theme('colors.neon-green-dark')},
+        8px 4px 30px ${theme('colors.neon-green-light')}
+      `,
+    },
+    '.nav-height-sm': {
+      height: `calc(89vh - ${theme('spacing.4')})`,
+    },
+    '.nav-height-md': {
+      height: `calc(88vh - ${theme('spacing.4')})`,
+    },
+  })
+
+  matchUtilities(
+    {
+      'text-shadow': (value) => ({ textShadow: value }),
+    },
+    { values: theme('textShadow') }
+  )
+})

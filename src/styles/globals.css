@@ -14,7 +14,7 @@
   }
 
   * {
-    @apply font-montserrat selection:bg-neon-green-light selection:text-black;
+    @apply font-balsamiq selection:bg-neon-magenta-dark selection:text-neon-magenta-light;
   }
 
   a,

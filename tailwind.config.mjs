@@ -1,9 +1,12 @@
-import tailwindFluid, { extract, fontSize, screens } from 'fluid-tailwind'
-import tailwindAnimate from 'tailwindcss-animate'
-// @ts-ignore
-import tailwindTouch from 'tailwindcss-touch'
+// @ts-nocheck
+
+import transforms from '@xpd/tailwind-3dtransforms'
+import fluid, { extract, fontSize, screens } from 'fluid-tailwind'
+import mobileHover from 'tailwind-mobile-hover'
+import animate from 'tailwindcss-animate'
+import touch from 'tailwindcss-touch'
 import { Fonts } from './src/constants'
-import { customs, getNeonColor, keyframes } from './tailwind.utils.mjs'
+import { utilities, getNeonColor, keyframes } from './tailwind.utils.mjs'
 
 /** @type {import("tailwindcss").Config} */
 const tailwindConfig = {
@@ -15,6 +18,7 @@ const tailwindConfig = {
     screens,
     fontSize,
     extend: {
+      keyframes,
       fontSize: {
         '2xs': '0.625rem',
       },
@@ -23,7 +27,11 @@ const tailwindConfig = {
         montserrat: `var(${Fonts.montserrat})`,
         saiba45: `var(${Fonts.saiba45})`,
       },
-      keyframes,
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       animation: {
         glitch: 'glitch 10s step-end infinite',
         blink: 'blink 5s infinite linear',
@@ -39,10 +47,7 @@ const tailwindConfig = {
       },
     },
   },
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  plugins: [tailwindFluid, tailwindAnimate, tailwindTouch(), customs],
+  plugins: [fluid, animate, touch(), transforms, mobileHover, utilities],
 }
 
 export default tailwindConfig

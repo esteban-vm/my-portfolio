@@ -1,115 +1,10 @@
-import Image from 'next/image'
 import tw from 'tailwind-styled-components'
 
-export const FlagImage = tw(Image)`
-
-  inline
-
-  w-auto
-
-  contrast-125
-
-  ~h-8/12
-
-`
-
-export const InnerWrapper = tw.div`
-
-  inline
-
-  select-none
-
-  text-center
-
-`
-
-export const LanguageSwitch = tw.input`
+export const Button = tw.button`
 
   pointer-events-auto
-
-  invisible
 
   relative
-
-  cursor-pointer
-
-  align-middle
-
-  font-bold
-
-  text-neon-green-darker
-
-  outline-none
-
-  ~w-20/24
-
-  before:visible
-
-  before:absolute
-
-  before:top-1/2
-
-  before:w-full
-
-  before:-translate-y-1/2
-
-  before:rounded-full
-
-  before:border
-
-  before:border-neon-green-light
-
-  before:bg-transparent
-
-  before:shadow-md
-
-  before:shadow-neon-green-light
-
-  before:backdrop-blur-sm
-
-  before:content-['']
-
-  before:~h-10/12
-
-  after:visible
-
-  after:absolute
-
-  after:top-1/2
-
-  after:box-border
-
-  after:flex
-
-  after:-translate-y-1/2
-
-  after:items-center
-
-  after:justify-center
-
-  after:rounded-full
-
-  after:border
-
-  after:border-neon-green-light
-
-  after:bg-black/80
-
-  after:content-['ES']
-
-  after:~size-10/12
-
-  default:after:left-0
-
-  checked:after:right-0
-
-  checked:after:content-['EN']
-
-`
-
-export const MusicButton = tw.button`
-
-  pointer-events-auto
 
   flex
 
@@ -119,27 +14,83 @@ export const MusicButton = tw.button`
 
   rounded-md
 
-  border
+  border-2
 
-  border-neon-green-light
+  border-neon-magenta-light
 
   bg-black/80
 
-  text-neon-green-darker
+  text-neon-magenta-light
 
-  shadow-md
+  shadow-inner
 
-  shadow-neon-green-light
+  shadow-neon-magenta-light
 
   backdrop-blur-sm
 
   transition-all
 
-  ~size-10/12
+  ~size-10/14
 
-  active:scale-95
+  perspective-[0.2em]
 
-  [&>svg]:size-1/2
+  before:absolute
+
+  before:top-[120%]
+
+  before:h-1/6
+
+  before:w-full
+
+  before:scale-x-125
+
+  before:scale-y-50
+
+  before:transform
+
+  before:bg-neon-magenta-light
+
+  before:opacity-60
+
+  before:blur-sm
+
+  before:content-['']
+
+  before:rotate-x-12
+
+  after:absolute
+
+  after:bottom-0
+
+  after:left-0
+
+  after:right-0
+
+  after:top-0
+
+  after:-z-10
+
+  after:bg-neon-magenta-light
+
+  after:opacity-0
+
+  after:shadow
+
+  after:shadow-neon-magenta-light
+
+  after:transition-opacity
+
+  after:ease-linear
+
+  after:content-['']
+
+  hover:text-white
+
+  hover:before:opacity-80
+
+  hover:after:opacity-100
+
+  [&>svg]:size-3/4
 
 `
 
@@ -158,6 +109,8 @@ export const Wrapper = tw.footer`
   z-20
 
   flex
+
+  h-[10vh]
 
   -translate-x-1/2
 
