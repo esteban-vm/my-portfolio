@@ -26,4 +26,12 @@
     @apply rounded-b-lg border-4 border-solid border-transparent lg:rounded-none lg:border-none;
     border-image: linear-gradient(to bottom, theme('colors.neon-green-light'), theme('colors.transparent')) 1 100%;
   }
+
+  section {
+    @apply size-full text-center text-white ~p-4/5;
+
+    h2 {
+      @apply text-neon-green-light underline decoration-wavy decoration-2 underline-offset-4 ~text-lg/2xl;
+    }
+  }
 }

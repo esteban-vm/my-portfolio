@@ -39,7 +39,7 @@ function Loader() {
   return (
     <Html className='text-center' center>
       <span className='font-bold text-neon-green-light'>{percent}</span>
-      <LoadingSpinner className='-left-1/2' />
+      <LoadingSpinner className='-left-1/2' color='#0cffed' />
     </Html>
   )
 }

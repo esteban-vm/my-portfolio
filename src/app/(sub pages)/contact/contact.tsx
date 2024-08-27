@@ -1,9 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'My Portfolio | Contact',
+  title: 'Contact',
 }
 
 export default function Contact() {
-  return <section>Contact</section>
+  return (
+    <section>
+      <h2>Contact</h2>
+    </section>
+  )
 }

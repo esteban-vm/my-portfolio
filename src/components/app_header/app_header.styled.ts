@@ -150,13 +150,13 @@ export const NavItem = tw.a<NavItemProps>`
 
   after:content-['']
 
+  active:scale-95
+
   hover:opacity-90
 
   hover:after:origin-bottom-left
 
   hover:after:scale-x-100
-
-  active:scale-95
 
   lg:after:absolute
 

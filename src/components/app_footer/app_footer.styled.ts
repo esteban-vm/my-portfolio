@@ -110,12 +110,22 @@ export const Wrapper = tw.footer`
 
   flex
 
-  h-[10vh]
+  h-[11vh]
 
   -translate-x-1/2
 
-  items-center
+  items-start
 
   justify-around
+
+  pt-3
+
+  md:h-[12vh]
+
+  lg:h-[13vh]
+
+  pointer-coarse:landscape:pt-0
+
+  pointer-coarse:landscape:lg:pt-3
 
 `
