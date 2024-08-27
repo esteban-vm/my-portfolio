@@ -6,8 +6,11 @@ import { AppFooter, AppHeader } from '@/components'
 import { clsx } from '@/utils'
 
 export const metadata: Metadata = {
+  title: { default: 'My Portfolio', template: 'My Portfolio | %s' },
   description: "Esteban V.M.'s portfolio website",
+  keywords: ['Front-End Developer', 'Web Design', 'Next.js', 'React'],
   authors: { name: 'Esteban V.M.', url: 'https://github.com/esteban-vm' },
+  generator: 'Next.js',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
