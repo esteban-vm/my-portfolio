@@ -1,5 +1,5 @@
 import type { SceneStage } from '@/types'
-import { useSceneContext } from '@/contexts'
+import { useGraphicsContext } from '@/contexts'
 import InfoCard from './info_card'
 
 type InfoCardContent = Record<NonNullable<SceneStage>, ReturnType<typeof InfoCard>>
@@ -29,6 +29,9 @@ const content: InfoCardContent = {
 }
 
 export default function InfoCardRenderer() {
-  const { currentStage } = useSceneContext()
-  return currentStage && content[currentStage]
+  const {
+    stage: { current },
+  } = useGraphicsContext()
+
+  return current && content[current]
 }

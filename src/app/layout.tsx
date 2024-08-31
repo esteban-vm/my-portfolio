@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import localFont from 'next/font/local'
 import { AppFooter, AppHeader } from '@/components'
+import { GraphicsContextProvider } from '@/contexts'
 import { clsx } from '@/utils'
 
 export const metadata: Metadata = {
@@ -13,13 +14,13 @@ export const metadata: Metadata = {
   generator: 'Next.js',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout(props: { children: ReactNode }) {
   return (
     <html lang='en'>
       <body suppressHydrationWarning={process.env.NODE_ENV === 'development'}>
         <main className={clsx('relative h-screen bg-black', balsamiq.variable, montserrat.variable, saiba45.variable)}>
           <AppHeader />
-          {children}
+          <GraphicsContextProvider {...props} />
           <AppFooter />
         </main>
       </body>

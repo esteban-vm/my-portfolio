@@ -12,7 +12,7 @@ import type * as THREE from 'three'
 import type { GLTF } from 'three-stdlib'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useSceneContext } from '@/contexts'
+import { useGraphicsContext } from '@/contexts'
 import { getModelPath } from '@/utils'
 
 interface GLTFResult extends GLTF {
@@ -32,29 +32,32 @@ const path = getModelPath('city')
 
 export default function CityModel(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(path) as GLTFResult
-  const { setCurrentStage } = useSceneContext()
+
+  const {
+    stage: { change },
+  } = useGraphicsContext()
 
   useFrame(({ camera }) => {
     const cameraX = camera.position.x
 
     switch (true) {
       case cameraX >= -1 && cameraX <= 1:
-        setCurrentStage(1)
+        change(1)
         break
       case cameraX >= 1.5 && cameraX <= 5:
       case cameraX <= -1.5 && cameraX >= -5:
-        setCurrentStage(2)
+        change(2)
         break
       case cameraX >= 5.5 && cameraX <= 9:
       case cameraX <= -5.5 && cameraX >= -9:
-        setCurrentStage(3)
+        change(3)
         break
       case cameraX >= 9.5:
       case cameraX <= -9.5:
-        setCurrentStage(4)
+        change(4)
         break
       default:
-        setCurrentStage(null)
+        change(null)
         break
     }
   })
