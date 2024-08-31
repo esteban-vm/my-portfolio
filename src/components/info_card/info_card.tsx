@@ -1,6 +1,6 @@
 import type { Route } from 'next'
 import { useEffect } from 'react'
-import { useSceneContext } from '@/contexts'
+import { useGraphicsContext } from '@/contexts'
 import { StyledLink } from '@/shared'
 import * as Styled from './info_card.styled'
 
@@ -11,20 +11,15 @@ interface InfoCardProps {
 }
 
 export default function InfoCard({ href, mainText, linkText = 'Learn more…' }: InfoCardProps) {
-  const { rotateScene, stopScene } = useSceneContext()
+  const { scene } = useGraphicsContext()
+  const { rotate, stop } = scene
 
-  useEffect(() => rotateScene, [rotateScene])
+  useEffect(() => rotate, [rotate])
 
   return (
-    <Styled.Wrapper
-      onPointerEnter={stopScene}
-      onPointerLeave={rotateScene}
-      onPointerOut={rotateScene}
-      onPointerOver={stopScene}
-    >
+    <Styled.Wrapper onPointerEnter={stop} onPointerLeave={rotate} onPointerOut={rotate} onPointerOver={stop}>
       <div className='relative'>
         <Styled.MainText>{mainText}</Styled.MainText>
-
         {href && (
           <StyledLink href={href}>
             <Styled.LinkContent>
