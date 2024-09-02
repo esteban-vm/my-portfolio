@@ -1,13 +1,13 @@
 import type { RenderOptions } from '@testing-library/react'
 import type { ReactElement } from 'react'
 import { render } from '@testing-library/react'
-import { GraphicsContextProvider } from '@/contexts'
+import { HomeContextProvider } from '@/contexts'
 
 export * from '@testing-library/react'
 export { default as userEvent } from '@testing-library/user-event'
 
-export const withGraphicsContext = (ui: ReactElement, options?: WithGraphicsOptions) => {
-  return render(ui, { wrapper: GraphicsContextProvider, ...options })
+export const withHomeContext = (ui: ReactElement, options?: Options) => {
+  return render(ui, { wrapper: HomeContextProvider, ...options })
 }
 
-type WithGraphicsOptions = Omit<RenderOptions, 'wrapper'>
+type Options = Omit<RenderOptions, 'wrapper'>

@@ -1,3 +1,3 @@
 'use client'
 
-export * from './graphics.context'
+export * from './home.context'

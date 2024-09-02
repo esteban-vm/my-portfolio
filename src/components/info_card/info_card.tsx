@@ -1,6 +1,6 @@
 import type { Route } from 'next'
 import { useEffect } from 'react'
-import { useGraphicsContext } from '@/contexts'
+import { useHomeContext } from '@/contexts'
 import { StyledLink } from '@/shared'
 import * as Styled from './info_card.styled'
 
@@ -11,8 +11,9 @@ interface InfoCardProps {
 }
 
 export default function InfoCard({ href, mainText, linkText = 'Learn more…' }: InfoCardProps) {
-  const { scene } = useGraphicsContext()
-  const { rotate, stop } = scene
+  const {
+    scene: { rotate, stop },
+  } = useHomeContext()
 
   useEffect(() => rotate, [rotate])
 

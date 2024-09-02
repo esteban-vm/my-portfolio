@@ -1,5 +1,5 @@
 import type { SceneStage } from '@/types'
-import { useGraphicsContext } from '@/contexts'
+import { useHomeContext } from '@/contexts'
 import InfoCard from './info_card'
 
 type InfoCardContent = Record<NonNullable<SceneStage>, ReturnType<typeof InfoCard>>
@@ -31,7 +31,7 @@ const content: InfoCardContent = {
 export default function InfoCardRenderer() {
   const {
     stage: { current },
-  } = useGraphicsContext()
+  } = useHomeContext()
 
   return current && content[current]
 }

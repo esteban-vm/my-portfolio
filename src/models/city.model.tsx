@@ -12,7 +12,7 @@ import type * as THREE from 'three'
 import type { GLTF } from 'three-stdlib'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useGraphicsContext } from '@/contexts'
+import { useHomeContext } from '@/contexts'
 import { getModelPath } from '@/utils'
 
 interface GLTFResult extends GLTF {
@@ -35,7 +35,7 @@ export default function CityModel(props: JSX.IntrinsicElements['group']) {
 
   const {
     stage: { change },
-  } = useGraphicsContext()
+  } = useHomeContext()
 
   useFrame(({ camera }) => {
     const cameraX = camera.position.x
