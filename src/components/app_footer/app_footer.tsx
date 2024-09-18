@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { TbMusic, TbMusicOff } from 'react-icons/tb'
 import { Spain, UK } from '@/svgs'
-import * as Styled from './app_footer.styled'
+import * as $ from './app_footer.styled'
 
 export default function AppFooter() {
   const audioRef = useRef<HTMLAudioElement>(null!)
@@ -36,14 +36,14 @@ export default function AppFooter() {
   }, [musicOn])
 
   return (
-    <Styled.Wrapper>
-      <Styled.Button title={musicOn ? musicOffLbl : musicOnLbl} type='button' onClick={toggleMusic}>
+    <$.Wrapper>
+      <$.Button title={musicOn ? musicOffLbl : musicOnLbl} type='button' onClick={toggleMusic}>
         {musicOn ? <TbMusicOff aria-label={musicOffLbl} /> : <TbMusic aria-label={musicOnLbl} />}
-      </Styled.Button>
+      </$.Button>
 
-      <Styled.Button title={`Switch to ${language}`} type='button' onClick={toggleLang}>
+      <$.Button title={`Switch to ${language}`} type='button' onClick={toggleLang}>
         {language === 'English' ? <UK aria-label='UK flag' /> : <Spain aria-label='Spain Flag' />}
-      </Styled.Button>
-    </Styled.Wrapper>
+      </$.Button>
+    </$.Wrapper>
   )
 }
