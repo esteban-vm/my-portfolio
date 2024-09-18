@@ -3,7 +3,7 @@ import { useId, useState } from 'react'
 import { LuMenu, LuX } from 'react-icons/lu'
 import { NavLinks } from '@/constants'
 import { StyledLink } from '@/shared'
-import * as Styled from './app_header.styled'
+import * as $ from './app_header.styled'
 
 export default function AppHeader() {
   const logoId = useId()
@@ -14,31 +14,31 @@ export default function AppHeader() {
   const closeNavBar = () => setIsNavBarOpen(false)
 
   return (
-    <Styled.Wrapper aria-labelledby={logoId}>
-      <Styled.InnerWrapper>
+    <$.Wrapper aria-labelledby={logoId}>
+      <$.InnerWrapper>
         <h1 id={logoId}>
           <StyledLink href='/'>
-            <Styled.NameLogo onClick={closeNavBar}>
+            <$.NameLogo onClick={closeNavBar}>
               Esteban
-              <Styled.LastName>&nbsp;V.M.</Styled.LastName>
-            </Styled.NameLogo>
+              <$.LastName>&nbsp;V.M.</$.LastName>
+            </$.NameLogo>
           </StyledLink>
         </h1>
 
-        <Styled.MobileButton type='button' onClick={toggleNavBar}>
+        <$.MobileButton type='button' onClick={toggleNavBar}>
           {isNavBarOpen ? <LuX aria-label='Close Menu' /> : <LuMenu aria-label='Open Menu' />}
-        </Styled.MobileButton>
+        </$.MobileButton>
 
-        <Styled.NavBar $isOpen={isNavBarOpen}>
+        <$.NavBar $isOpen={isNavBarOpen}>
           {NavLinks.map(({ href, id, text, ...rest }) => (
             <StyledLink key={id} href={href}>
-              <Styled.NavItem $isActive={currentPathname === href} id={id} onClick={closeNavBar} {...rest}>
+              <$.NavItem $isActive={currentPathname === href} id={id} onClick={closeNavBar} {...rest}>
                 {text}
-              </Styled.NavItem>
+              </$.NavItem>
             </StyledLink>
           ))}
-        </Styled.NavBar>
-      </Styled.InnerWrapper>
-    </Styled.Wrapper>
+        </$.NavBar>
+      </$.InnerWrapper>
+    </$.Wrapper>
   )
 }

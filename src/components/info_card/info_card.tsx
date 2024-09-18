@@ -2,7 +2,7 @@ import type { Route } from 'next'
 import { useEffect } from 'react'
 import { useHomeContext } from '@/contexts'
 import { StyledLink } from '@/shared'
-import * as Styled from './info_card.styled'
+import * as $ from './info_card.styled'
 
 interface InfoCardProps {
   href?: Route
@@ -18,18 +18,19 @@ export default function InfoCard({ href, mainText, linkText = 'Learn more…' }:
   useEffect(() => rotate, [rotate])
 
   return (
-    <Styled.Wrapper onPointerEnter={stop} onPointerLeave={rotate} onPointerOut={rotate} onPointerOver={stop}>
+    <$.Wrapper onPointerEnter={stop} onPointerLeave={rotate} onPointerOut={rotate} onPointerOver={stop}>
       <div className='relative'>
-        <Styled.MainText>{mainText}</Styled.MainText>
+        <$.MainText>{mainText}</$.MainText>
+
         {href && (
           <StyledLink href={href}>
-            <Styled.LinkContent>
-              <Styled.LinkText>{linkText}</Styled.LinkText>
-              <Styled.ArrowIcon aria-label={linkText} />
-            </Styled.LinkContent>
+            <$.LinkContent>
+              <$.LinkText>{linkText}</$.LinkText>
+              <$.ArrowIcon aria-label={linkText} />
+            </$.LinkContent>
           </StyledLink>
         )}
       </div>
-    </Styled.Wrapper>
+    </$.Wrapper>
   )
 }
