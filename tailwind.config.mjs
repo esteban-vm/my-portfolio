@@ -12,7 +12,7 @@ import { utilities, getNeonColor, keyframes } from './tailwind.utils.mjs'
 const tailwindConfig = {
   content: {
     extract,
-    files: ['./src/(app|components|scenes|shared)/**/*.{js,ts,jsx,tsx,mdx}'],
+    files: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   },
   theme: {
     screens,
