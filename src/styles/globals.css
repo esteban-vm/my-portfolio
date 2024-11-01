@@ -31,7 +31,11 @@
     @apply size-full text-center text-white;
 
     h2 {
-      @apply text-neon-green-light underline decoration-wavy decoration-2 underline-offset-4 ~text-lg/2xl;
+      @apply text-neon-green-light ~text-lg/2xl;
+    }
+
+    h3 {
+      @apply mt-4 text-neon-green-lighter ~text-base/xl;
     }
   }
 
