@@ -20,6 +20,7 @@ describe(`${clsx.name}:`, () => {
       'border-neon-green-dark',
       'bg-neon-magenta-dark',
       'text-neon-green-lighter',
+      // @ts-ignore
       null && 'outline-neon-green-dark',
     ]
 

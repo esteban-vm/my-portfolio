@@ -1,4 +1,4 @@
-export type FontName = AppTypes.FontName
-export type ModelName = AppTypes.ModelName
-export type NeonColor = AppTypes.NeonColor
-export type SceneStage = AppTypes.SceneStage
+export type FontName = Types.FontName
+export type ModelName = Types.ModelName
+export type NeonColor = Types.NeonColor
+export type SceneStage = Types.SceneStage

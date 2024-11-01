@@ -48,6 +48,9 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
     devDependencies:
+      '@fluid-tailwind/tailwind-merge':
+        specifier: ^0.0.3
+        version: 0.0.3(tailwind-merge@2.4.0)
       '@testing-library/jest-dom':
         specifier: ^6.4.6
         version: 6.4.6(@types/jest@29.5.12)(vitest@1.6.0)
@@ -459,6 +462,11 @@ packages:
   '@eslint/js@8.57.0':
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@fluid-tailwind/tailwind-merge@0.0.3':
+    resolution: {integrity: sha512-0lTV5NnIZArH9cV/qCw8N+wSdbb+0iUmWFnpHeTX8YT3U+ufLof/fADvAVMCPPnLIox3y3E8fMykmCn9WJ+/JA==}
+    peerDependencies:
+      tailwind-merge: ^2.4.0
 
   '@hookform/resolvers@3.9.0':
     resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
@@ -3788,6 +3796,10 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.0': {}
+
+  '@fluid-tailwind/tailwind-merge@0.0.3(tailwind-merge@2.4.0)':
+    dependencies:
+      tailwind-merge: 2.4.0
 
   '@hookform/resolvers@3.9.0(react-hook-form@7.52.1(react@18.3.1))':
     dependencies:

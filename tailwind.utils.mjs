@@ -1,7 +1,7 @@
 import plugin from 'tailwindcss/plugin'
 
 /**
- * @template {AppTypes.NeonColor} T
+ * @template {Types.NeonColor} T
  * @param {T} color
  **/
 export const getNeonColor = (color) => {

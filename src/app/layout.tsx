@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
-      <body suppressHydrationWarning={process.env.NODE_ENV === 'development'}>
+      <body suppressHydrationWarning>
         <main className={clsx('relative h-screen bg-black', balsamiq.variable, montserrat.variable, saiba45.variable)}>
           <AppHeader />
           {children}
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 }
 
 const balsamiq = localFont({
-  variable: '--font-balsamiq' satisfies AppTypes.FontName['balsamiq'],
+  variable: '--font-balsamiq' satisfies Types.FontName['balsamiq'],
   display: 'swap',
   fallback: ['sans-serif'],
   src: [
@@ -39,7 +39,7 @@ const balsamiq = localFont({
 })
 
 const montserrat = localFont({
-  variable: '--font-montserrat' satisfies AppTypes.FontName['montserrat'],
+  variable: '--font-montserrat' satisfies Types.FontName['montserrat'],
   display: 'swap',
   fallback: ['sans-serif'],
   src: [
@@ -49,7 +49,7 @@ const montserrat = localFont({
 })
 
 const saiba45 = localFont({
-  variable: '--font-saiba45' satisfies AppTypes.FontName['saiba45'],
+  variable: '--font-saiba45' satisfies Types.FontName['saiba45'],
   display: 'swap',
   fallback: ['cursive'],
   src: '../../public/fonts/SAIBA-45.woff2',
