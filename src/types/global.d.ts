@@ -3,7 +3,7 @@ import type { Fonts, Models } from '@/constants'
 type NeonColorVariant = 'light' | 'dark'
 
 declare global {
-  namespace AppTypes {
+  namespace Types {
     type FontName = typeof Fonts
     type ModelName = keyof typeof Models
     type NeonColor = `green-${NeonColorVariant | `${NeonColorVariant}er`}` | `magenta-${NeonColorVariant}` | 'yellow'
